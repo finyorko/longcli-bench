@@ -1,0 +1,1395 @@
+  {
+  "tasks_root": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2",
+  "exclude": {
+    "dir_names": [
+      ".git",
+      ".hg",
+      ".idea",
+      ".mypy_cache",
+      ".pytest_cache",
+      ".ruff_cache",
+      ".svn",
+      ".venv",
+      ".vscode",
+      "__pycache__",
+      "build",
+      "dist",
+      "node_modules",
+      "solution",
+      "target",
+      "tests",
+      "venv"
+    ],
+    "file_names": [
+      "Dockerfile",
+      "instruction.md",
+      "task.toml"
+    ]
+  },
+  "summary": {
+    "counts": {
+      "tasks_found": 89,
+      "tasks_analyzed": 89
+    },
+    "averages": {
+      "avg_files": 1.6067415730337078,
+      "avg_code_files": 0.6853932584269663,
+      "avg_code_loc": 227.73033707865167,
+      "avg_expert_time_min": 206.70454545454547,
+      "avg_junior_time_min": 1425.3977272727273
+    },
+    "languages": {
+      "total_loc": {
+        "Python": 2098,
+        "C": 7025,
+        "JavaScript": 2089,
+        "SQL": 41,
+        "C++": 7439,
+        "Shell": 82,
+        "Rust": 724,
+        "Turtle": 305,
+        "COBOL": 164,
+        "Red": 301
+      },
+      "tasks_with_language": {
+        "Python": 20,
+        "C": 10,
+        "JavaScript": 2,
+        "SQL": 1,
+        "C++": 2,
+        "Shell": 4,
+        "Rust": 1,
+        "Turtle": 1,
+        "COBOL": 1,
+        "Red": 2
+      }
+    }
+  },
+  "tasks": [
+    {
+      "task_key": "2Fx6Ues7VLnYo5TdH9smXE/llm-inference-batching-scheduler",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/2Fx6Ues7VLnYo5TdH9smXE/llm-inference-batching-scheduler",
+      "expert_time_estimate_min": 45.0,
+      "junior_time_estimate_min": 450.0,
+      "total_files": 5,
+      "code_files": 3,
+      "code_lines_total": 363,
+      "code_lines_nonblank": 300,
+      "languages": {
+        "Python": {
+          "files": 3,
+          "lines": 363,
+          "nonblank": 300
+        }
+      },
+      "primary_language": "Python"
+    },
+    {
+      "task_key": "2XNt9VEmH8r9FJdPeH9UxU/fix-code-vulnerability",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/2XNt9VEmH8r9FJdPeH9UxU/fix-code-vulnerability",
+      "expert_time_estimate_min": 120.0,
+      "junior_time_estimate_min": 240.0,
+      "total_files": 0,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "2gm9aAxh3ufEHTNAcZ8qB3/make-doom-for-mips",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/2gm9aAxh3ufEHTNAcZ8qB3/make-doom-for-mips",
+      "expert_time_estimate_min": 480.0,
+      "junior_time_estimate_min": 1920.0,
+      "total_files": 2,
+      "code_files": 2,
+      "code_lines_total": 2215,
+      "code_lines_nonblank": 1851,
+      "languages": {
+        "C": {
+          "files": 1,
+          "lines": 247,
+          "nonblank": 211
+        },
+        "JavaScript": {
+          "files": 1,
+          "lines": 1968,
+          "nonblank": 1640
+        }
+      },
+      "primary_language": "JavaScript"
+    },
+    {
+      "task_key": "2hEZAwigfHAA5cnDNAJvfT/sqlite-db-truncate",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/2hEZAwigfHAA5cnDNAJvfT/sqlite-db-truncate",
+      "expert_time_estimate_min": 60.0,
+      "junior_time_estimate_min": 240.0,
+      "total_files": 1,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "3HV9wmSrWRW9TuYurepoFx/extract-elf",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/3HV9wmSrWRW9TuYurepoFx/extract-elf",
+      "expert_time_estimate_min": 30.0,
+      "junior_time_estimate_min": 240.0,
+      "total_files": 1,
+      "code_files": 1,
+      "code_lines_total": 5,
+      "code_lines_nonblank": 4,
+      "languages": {
+        "C": {
+          "files": 1,
+          "lines": 5,
+          "nonblank": 4
+        }
+      },
+      "primary_language": "C"
+    },
+    {
+      "task_key": "3aN2GgseP4MfXC7ixV7cXB/mteb-leaderboard",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/3aN2GgseP4MfXC7ixV7cXB/mteb-leaderboard",
+      "expert_time_estimate_min": 5.0,
+      "junior_time_estimate_min": 10.0,
+      "total_files": 0,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "55spjFHXbhXqhkHUB3xfBL/query-optimize",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/55spjFHXbhXqhkHUB3xfBL/query-optimize",
+      "expert_time_estimate_min": 60.0,
+      "junior_time_estimate_min": 480.0,
+      "total_files": 1,
+      "code_files": 1,
+      "code_lines_total": 41,
+      "code_lines_nonblank": 41,
+      "languages": {
+        "SQL": {
+          "files": 1,
+          "lines": 41,
+          "nonblank": 41
+        }
+      },
+      "primary_language": "SQL"
+    },
+    {
+      "task_key": "5CV2XfZKatcdbEk2ctQQAF/path-tracing-reverse",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/5CV2XfZKatcdbEk2ctQQAF/path-tracing-reverse",
+      "expert_time_estimate_min": 120.0,
+      "junior_time_estimate_min": 1440.0,
+      "total_files": 1,
+      "code_files": 1,
+      "code_lines_total": 320,
+      "code_lines_nonblank": 260,
+      "languages": {
+        "C": {
+          "files": 1,
+          "lines": 320,
+          "nonblank": 260
+        }
+      },
+      "primary_language": "C"
+    },
+    {
+      "task_key": "5pwPaf92MGZBJjvqnuBn9d/cancel-async-tasks",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/5pwPaf92MGZBJjvqnuBn9d/cancel-async-tasks",
+      "expert_time_estimate_min": 120.0,
+      "junior_time_estimate_min": 600.0,
+      "total_files": 0,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "79ekQLXanbbMZMfTk3qzaF/portfolio-optimization",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/79ekQLXanbbMZMfTk3qzaF/portfolio-optimization",
+      "expert_time_estimate_min": 120.0,
+      "junior_time_estimate_min": 480.0,
+      "total_files": 6,
+      "code_files": 6,
+      "code_lines_total": 371,
+      "code_lines_nonblank": 293,
+      "languages": {
+        "C": {
+          "files": 1,
+          "lines": 58,
+          "nonblank": 45
+        },
+        "Python": {
+          "files": 5,
+          "lines": 313,
+          "nonblank": 248
+        }
+      },
+      "primary_language": "Python"
+    },
+    {
+      "task_key": "7C9njxdDNTb4APfNTmNsi5/custom-memory-heap-crash",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/7C9njxdDNTb4APfNTmNsi5/custom-memory-heap-crash",
+      "expert_time_estimate_min": 30.0,
+      "junior_time_estimate_min": 1200.0,
+      "total_files": 5,
+      "code_files": 3,
+      "code_lines_total": 219,
+      "code_lines_nonblank": 173,
+      "languages": {
+        "C": {
+          "files": 1,
+          "lines": 11,
+          "nonblank": 8
+        },
+        "C++": {
+          "files": 2,
+          "lines": 208,
+          "nonblank": 165
+        }
+      },
+      "primary_language": "C++"
+    },
+    {
+      "task_key": "7bFmFkDrFkAzWEnmNWFgw9/chess-best-move",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/7bFmFkDrFkAzWEnmNWFgw9/chess-best-move",
+      "expert_time_estimate_min": 45.0,
+      "junior_time_estimate_min": 180.0,
+      "total_files": 1,
+      "code_files": 1,
+      "code_lines_total": 122,
+      "code_lines_nonblank": 100,
+      "languages": {
+        "Python": {
+          "files": 1,
+          "lines": 122,
+          "nonblank": 100
+        }
+      },
+      "primary_language": "Python"
+    },
+    {
+      "task_key": "7s8y623XYuDhmBG6ERABwC/install-windows-3.11",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/7s8y623XYuDhmBG6ERABwC/install-windows-3.11",
+      "expert_time_estimate_min": 300.0,
+      "junior_time_estimate_min": 600.0,
+      "total_files": 7,
+      "code_files": 1,
+      "code_lines_total": 121,
+      "code_lines_nonblank": 99,
+      "languages": {
+        "JavaScript": {
+          "files": 1,
+          "lines": 121,
+          "nonblank": 99
+        }
+      },
+      "primary_language": "JavaScript"
+    },
+    {
+      "task_key": "7w8vEz8xG5Rmh59QkrpMp2/password-recovery",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/7w8vEz8xG5Rmh59QkrpMp2/password-recovery",
+      "expert_time_estimate_min": 100.0,
+      "junior_time_estimate_min": 300.0,
+      "total_files": 1,
+      "code_files": 1,
+      "code_lines_total": 43,
+      "code_lines_nonblank": 33,
+      "languages": {
+        "Shell": {
+          "files": 1,
+          "lines": 43,
+          "nonblank": 33
+        }
+      },
+      "primary_language": "Shell"
+    },
+    {
+      "task_key": "869oU8dUyJHL4uUFPzhKJM/rstan-to-pystan",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/869oU8dUyJHL4uUFPzhKJM/rstan-to-pystan",
+      "expert_time_estimate_min": 180.0,
+      "junior_time_estimate_min": 2880.0,
+      "total_files": 5,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "8WGyid6WdyvC3RsCcr7kLU/model-extraction-relu-logits",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/8WGyid6WdyvC3RsCcr7kLU/model-extraction-relu-logits",
+      "expert_time_estimate_min": 480.0,
+      "junior_time_estimate_min": 2400.0,
+      "total_files": 1,
+      "code_files": 1,
+      "code_lines_total": 36,
+      "code_lines_nonblank": 26,
+      "languages": {
+        "Python": {
+          "files": 1,
+          "lines": 36,
+          "nonblank": 26
+        }
+      },
+      "primary_language": "Python"
+    },
+    {
+      "task_key": "8njYn5Af8tPLKjM5cFeNvR/torch-tensor-parallelism",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/8njYn5Af8tPLKjM5cFeNvR/torch-tensor-parallelism",
+      "expert_time_estimate_min": 240.0,
+      "junior_time_estimate_min": 1200.0,
+      "total_files": 0,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "9BGkwkiZs6r3NTmoLCLzr9/path-tracing",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/9BGkwkiZs6r3NTmoLCLzr9/path-tracing",
+      "expert_time_estimate_min": 360.0,
+      "junior_time_estimate_min": 2400.0,
+      "total_files": 1,
+      "code_files": 1,
+      "code_lines_total": 317,
+      "code_lines_nonblank": 258,
+      "languages": {
+        "C": {
+          "files": 1,
+          "lines": 317,
+          "nonblank": 258
+        }
+      },
+      "primary_language": "C"
+    },
+    {
+      "task_key": "ArEmuSGC435pAkSA7cv8qw/dna-assembly",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/ArEmuSGC435pAkSA7cv8qw/dna-assembly",
+      "expert_time_estimate_min": 60.0,
+      "junior_time_estimate_min": 180.0,
+      "total_files": 1,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "ByGtvRdgQehLA6H7TL8cfS/regex-log",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/ByGtvRdgQehLA6H7TL8cfS/regex-log",
+      "expert_time_estimate_min": 45.0,
+      "junior_time_estimate_min": 180.0,
+      "total_files": 0,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "CGqXnFmcaVcQCTbCZMpg2T/gpt2-codegolf",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/CGqXnFmcaVcQCTbCZMpg2T/gpt2-codegolf",
+      "expert_time_estimate_min": 2400.0,
+      "junior_time_estimate_min": 9600.0,
+      "total_files": 0,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "CrxDfvhBFmo3ahvG2RfDM3/constraints-scheduling",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/CrxDfvhBFmo3ahvG2RfDM3/constraints-scheduling",
+      "expert_time_estimate_min": 15.0,
+      "junior_time_estimate_min": 30.0,
+      "total_files": 3,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "DcF3L5bfEpwdBkhfr3hgHe/hf-model-inference",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/DcF3L5bfEpwdBkhfr3hgHe/hf-model-inference",
+      "expert_time_estimate_min": 20.0,
+      "junior_time_estimate_min": 120.0,
+      "total_files": 0,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "GCqHhNMgC2jpcy3h8te5A7/build-cython-ext",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/GCqHhNMgC2jpcy3h8te5A7/build-cython-ext",
+      "expert_time_estimate_min": 60.0,
+      "junior_time_estimate_min": 180.0,
+      "total_files": 0,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "GZXTJdXif2uoqEMrNXfNyB/largest-eigenval",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/GZXTJdXif2uoqEMrNXfNyB/largest-eigenval",
+      "expert_time_estimate_min": 60.0,
+      "junior_time_estimate_min": 180.0,
+      "total_files": 2,
+      "code_files": 2,
+      "code_lines_total": 85,
+      "code_lines_nonblank": 67,
+      "languages": {
+        "Python": {
+          "files": 2,
+          "lines": 85,
+          "nonblank": 67
+        }
+      },
+      "primary_language": "Python"
+    },
+    {
+      "task_key": "H9EGgCK3p6caXKKnhsqu6a/build-pov-ray",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/H9EGgCK3p6caXKKnhsqu6a/build-pov-ray",
+      "expert_time_estimate_min": 60.0,
+      "junior_time_estimate_min": 180.0,
+      "total_files": 1,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "J63TLMqMZcCeiRe8KAiy5T/mteb-retrieve",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/J63TLMqMZcCeiRe8KAiy5T/mteb-retrieve",
+      "expert_time_estimate_min": 15.0,
+      "junior_time_estimate_min": 45.0,
+      "total_files": 1,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "JGX6wXigbfSgX6m298mcKW/kv-store-grpc",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/JGX6wXigbfSgX6m298mcKW/kv-store-grpc",
+      "expert_time_estimate_min": 15.0,
+      "junior_time_estimate_min": 120.0,
+      "total_files": 0,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "JK5CeLoen6gxrbEkrjQ94D/gcode-to-text",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/JK5CeLoen6gxrbEkrjQ94D/gcode-to-text",
+      "expert_time_estimate_min": 60.0,
+      "junior_time_estimate_min": 300.0,
+      "total_files": 1,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "JQfDtvG4qqL3QfwErWynWU/break-filter-js-from-html",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/JQfDtvG4qqL3QfwErWynWU/break-filter-js-from-html",
+      "expert_time_estimate_min": 20.0,
+      "junior_time_estimate_min": 480.0,
+      "total_files": 1,
+      "code_files": 1,
+      "code_lines_total": 43,
+      "code_lines_nonblank": 30,
+      "languages": {
+        "Python": {
+          "files": 1,
+          "lines": 43,
+          "nonblank": 30
+        }
+      },
+      "primary_language": "Python"
+    },
+    {
+      "task_key": "K56RXLv9fW76nGzkYythKB/torch-pipeline-parallelism",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/K56RXLv9fW76nGzkYythKB/torch-pipeline-parallelism",
+      "expert_time_estimate_min": 240.0,
+      "junior_time_estimate_min": 1200.0,
+      "total_files": 0,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "KRPXswDf2LBuozQgKhCqnG/code-from-image",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/KRPXswDf2LBuozQgKhCqnG/code-from-image",
+      "expert_time_estimate_min": 30.0,
+      "junior_time_estimate_min": 120.0,
+      "total_files": 1,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "KSwQXLapvDLmcHTvZcJVQG/headless-terminal",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/KSwQXLapvDLmcHTvZcJVQG/headless-terminal",
+      "expert_time_estimate_min": 120.0,
+      "junior_time_estimate_min": 240.0,
+      "total_files": 1,
+      "code_files": 1,
+      "code_lines_total": 14,
+      "code_lines_nonblank": 11,
+      "languages": {
+        "Python": {
+          "files": 1,
+          "lines": 14,
+          "nonblank": 11
+        }
+      },
+      "primary_language": "Python"
+    },
+    {
+      "task_key": "Kk55pgeAWyodY7sZSnMpXw/dna-insert",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/Kk55pgeAWyodY7sZSnMpXw/dna-insert",
+      "expert_time_estimate_min": 30.0,
+      "junior_time_estimate_min": 120.0,
+      "total_files": 1,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "LEz4caXvpzU9rMBzsJnZA6/pypi-server",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/LEz4caXvpzU9rMBzsJnZA6/pypi-server",
+      "expert_time_estimate_min": 60.0,
+      "junior_time_estimate_min": 180.0,
+      "total_files": 0,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "LVyG59RRyF7y2PiCy5VT3B/feal-linear-cryptanalysis",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/LVyG59RRyF7y2PiCy5VT3B/feal-linear-cryptanalysis",
+      "expert_time_estimate_min": 960.0,
+      "junior_time_estimate_min": 19200.0,
+      "total_files": 3,
+      "code_files": 3,
+      "code_lines_total": 369,
+      "code_lines_nonblank": 299,
+      "languages": {
+        "C": {
+          "files": 2,
+          "lines": 272,
+          "nonblank": 222
+        },
+        "Python": {
+          "files": 1,
+          "lines": 97,
+          "nonblank": 77
+        }
+      },
+      "primary_language": "C"
+    },
+    {
+      "task_key": "LeNjAXy6fbV5X852Td8iV9/make-mips-interpreter",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/LeNjAXy6fbV5X852Td8iV9/make-mips-interpreter",
+      "expert_time_estimate_min": 480.0,
+      "junior_time_estimate_min": 3600.0,
+      "total_files": 1,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "MAyhSNHCZegJvZuPyTitjJ/crack-7z-hash",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/MAyhSNHCZegJvZuPyTitjJ/crack-7z-hash",
+      "expert_time_estimate_min": 5.0,
+      "junior_time_estimate_min": 10.0,
+      "total_files": 1,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "MWrHdxDHM3npYpRiLMz3iZ/write-compressor",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/MWrHdxDHM3npYpRiLMz3iZ/write-compressor",
+      "expert_time_estimate_min": 1440.0,
+      "junior_time_estimate_min": 4800.0,
+      "total_files": 3,
+      "code_files": 2,
+      "code_lines_total": 800,
+      "code_lines_nonblank": 710,
+      "languages": {
+        "C": {
+          "files": 1,
+          "lines": 76,
+          "nonblank": 61
+        },
+        "Rust": {
+          "files": 1,
+          "lines": 724,
+          "nonblank": 649
+        }
+      },
+      "primary_language": "Rust"
+    },
+    {
+      "task_key": "PBqbNgPwKfCmnNMFQbSbAJ/distribution-search",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/PBqbNgPwKfCmnNMFQbSbAJ/distribution-search",
+      "expert_time_estimate_min": 120.0,
+      "junior_time_estimate_min": 240.0,
+      "total_files": 0,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "Q3LDEno2RovPVJEJXuoivq/merge-diff-arc-agi-task",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/Q3LDEno2RovPVJEJXuoivq/merge-diff-arc-agi-task",
+      "expert_time_estimate_min": 20.0,
+      "junior_time_estimate_min": 40.0,
+      "total_files": 3,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "QDMuuRtnbx7cWNzKkXsGhM/compile-compcert",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/QDMuuRtnbx7cWNzKkXsGhM/compile-compcert",
+      "expert_time_estimate_min": 60.0,
+      "junior_time_estimate_min": 120.0,
+      "total_files": 0,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "QU8iD2bMsFXumTCQhnBiGz/video-processing",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/QU8iD2bMsFXumTCQhnBiGz/video-processing",
+      "expert_time_estimate_min": 400.0,
+      "junior_time_estimate_min": 1000.0,
+      "total_files": 1,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "QUdXqzZFwRrgRZ7SPHyxto/train-fasttext",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/QUdXqzZFwRrgRZ7SPHyxto/train-fasttext",
+      "expert_time_estimate_min": 30.0,
+      "junior_time_estimate_min": 90.0,
+      "total_files": 1,
+      "code_files": 1,
+      "code_lines_total": 5,
+      "code_lines_nonblank": 4,
+      "languages": {
+        "Python": {
+          "files": 1,
+          "lines": 5,
+          "nonblank": 4
+        }
+      },
+      "primary_language": "Python"
+    },
+    {
+      "task_key": "RNEJHNxbtKQgmztc6q4aKb/sparql-university",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/RNEJHNxbtKQgmztc6q4aKb/sparql-university",
+      "expert_time_estimate_min": 800.0,
+      "junior_time_estimate_min": 10000.0,
+      "total_files": 1,
+      "code_files": 1,
+      "code_lines_total": 305,
+      "code_lines_nonblank": 235,
+      "languages": {
+        "Turtle": {
+          "files": 1,
+          "lines": 305,
+          "nonblank": 235
+        }
+      },
+      "primary_language": "Turtle"
+    },
+    {
+      "task_key": "RkUWMSfgcaHLyc3cnCt62s/vulnerable-secret",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/RkUWMSfgcaHLyc3cnCt62s/vulnerable-secret",
+      "expert_time_estimate_min": 20.0,
+      "junior_time_estimate_min": 120.0,
+      "total_files": 1,
+      "code_files": 1,
+      "code_lines_total": 76,
+      "code_lines_nonblank": 62,
+      "languages": {
+        "C": {
+          "files": 1,
+          "lines": 76,
+          "nonblank": 62
+        }
+      },
+      "primary_language": "C"
+    },
+    {
+      "task_key": "RyWCxfjAf9RhapMxS2dMks/feal-differential-cryptanalysis",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/RyWCxfjAf9RhapMxS2dMks/feal-differential-cryptanalysis",
+      "expert_time_estimate_min": 480.0,
+      "junior_time_estimate_min": 19200.0,
+      "total_files": 1,
+      "code_files": 1,
+      "code_lines_total": 89,
+      "code_lines_nonblank": 62,
+      "languages": {
+        "Python": {
+          "files": 1,
+          "lines": 89,
+          "nonblank": 62
+        }
+      },
+      "primary_language": "Python"
+    },
+    {
+      "task_key": "S2VRUfRKCUQ2hWH9KJzsbK/large-scale-text-editing",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/S2VRUfRKCUQ2hWH9KJzsbK/large-scale-text-editing",
+      "expert_time_estimate_min": 40.0,
+      "junior_time_estimate_min": 90.0,
+      "total_files": 1,
+      "code_files": 1,
+      "code_lines_total": 93,
+      "code_lines_nonblank": 75,
+      "languages": {
+        "Python": {
+          "files": 1,
+          "lines": 93,
+          "nonblank": 75
+        }
+      },
+      "primary_language": "Python"
+    },
+    {
+      "task_key": "SeKnWxFXAqYwFdRQvLn2Wk/filter-js-from-html",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/SeKnWxFXAqYwFdRQvLn2Wk/filter-js-from-html",
+      "expert_time_estimate_min": 45.0,
+      "junior_time_estimate_min": 480.0,
+      "total_files": 0,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "Skg3RaRNtgRKSRBoJaSgjx/openssl-selfsigned-cert",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/Skg3RaRNtgRKSRBoJaSgjx/openssl-selfsigned-cert",
+      "expert_time_estimate_min": 20.0,
+      "junior_time_estimate_min": 120.0,
+      "total_files": 0,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "SmKKTsxNnHaHqhzng8SrD2/cobol-modernization",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/SmKKTsxNnHaHqhzng8SrD2/cobol-modernization",
+      "expert_time_estimate_min": 20.0,
+      "junior_time_estimate_min": 70.0,
+      "total_files": 5,
+      "code_files": 1,
+      "code_lines_total": 164,
+      "code_lines_nonblank": 148,
+      "languages": {
+        "COBOL": {
+          "files": 1,
+          "lines": 164,
+          "nonblank": 148
+        }
+      },
+      "primary_language": "COBOL"
+    },
+    {
+      "task_key": "T9eC49XFCYopUM2bDKgar3/financial-document-processor",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/T9eC49XFCYopUM2bDKgar3/financial-document-processor",
+      "expert_time_estimate_min": 30.0,
+      "junior_time_estimate_min": 60.0,
+      "total_files": 18,
+      "code_files": 1,
+      "code_lines_total": 50,
+      "code_lines_nonblank": 37,
+      "languages": {
+        "Python": {
+          "files": 1,
+          "lines": 50,
+          "nonblank": 37
+        }
+      },
+      "primary_language": "Python"
+    },
+    {
+      "task_key": "TXGXVihdFyGLhhWJdjKoXE/build-pmars",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/TXGXVihdFyGLhhWJdjKoXE/build-pmars",
+      "expert_time_estimate_min": 90.0,
+      "junior_time_estimate_min": 270.0,
+      "total_files": 2,
+      "code_files": 2,
+      "code_lines_total": 96,
+      "code_lines_nonblank": 87,
+      "languages": {
+        "Red": {
+          "files": 2,
+          "lines": 96,
+          "nonblank": 87
+        }
+      },
+      "primary_language": "Red"
+    },
+    {
+      "task_key": "V8M9GUmT67TmSKo9FQTdoC/count-dataset-tokens",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/V8M9GUmT67TmSKo9FQTdoC/count-dataset-tokens",
+      "expert_time_estimate_min": 30.0,
+      "junior_time_estimate_min": 120.0,
+      "total_files": 0,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "WNjEws4zKtRNWJABpoU892/sanitize-git-repo",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/WNjEws4zKtRNWJABpoU892/sanitize-git-repo",
+      "expert_time_estimate_min": 30.0,
+      "junior_time_estimate_min": 60.0,
+      "total_files": 1,
+      "code_files": 1,
+      "code_lines_total": 5,
+      "code_lines_nonblank": 5,
+      "languages": {
+        "Shell": {
+          "files": 1,
+          "lines": 5,
+          "nonblank": 5
+        }
+      },
+      "primary_language": "Shell"
+    },
+    {
+      "task_key": "X4QTPPGhjzjJSVbTTETRUK/db-wal-recovery",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/X4QTPPGhjzjJSVbTTETRUK/db-wal-recovery",
+      "expert_time_estimate_min": 45.0,
+      "junior_time_estimate_min": 240.0,
+      "total_files": 2,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "XUcCMQRrLoqxtCV4Hc9F2a/caffe-cifar-10",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/XUcCMQRrLoqxtCV4Hc9F2a/caffe-cifar-10",
+      "expert_time_estimate_min": null,
+      "junior_time_estimate_min": null,
+      "total_files": 0,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "XX65orYkXVMqTQu7C3JUZY/bn-fit-modify",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/XX65orYkXVMqTQu7C3JUZY/bn-fit-modify",
+      "expert_time_estimate_min": 480.0,
+      "junior_time_estimate_min": 1000.0,
+      "total_files": 0,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "XyJK3D4eSbPWgNt9Bw4RyU/regex-chess",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/XyJK3D4eSbPWgNt9Bw4RyU/regex-chess",
+      "expert_time_estimate_min": 1440.0,
+      "junior_time_estimate_min": 4800.0,
+      "total_files": 1,
+      "code_files": 1,
+      "code_lines_total": 124,
+      "code_lines_nonblank": 96,
+      "languages": {
+        "Python": {
+          "files": 1,
+          "lines": 124,
+          "nonblank": 96
+        }
+      },
+      "primary_language": "Python"
+    },
+    {
+      "task_key": "YiQMoSRPZzKeHRDhZkwmyd/qemu-alpine-ssh",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/YiQMoSRPZzKeHRDhZkwmyd/qemu-alpine-ssh",
+      "expert_time_estimate_min": 30.0,
+      "junior_time_estimate_min": 480.0,
+      "total_files": 0,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "YkDjArg6hKdFYEmdiPrztY/schemelike-metacircular-eval",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/YkDjArg6hKdFYEmdiPrztY/schemelike-metacircular-eval",
+      "expert_time_estimate_min": 300.0,
+      "junior_time_estimate_min": 2440.0,
+      "total_files": 0,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "ZDKh9BtehT8SorZTrWLJsn/sqlite-with-gcov",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/ZDKh9BtehT8SorZTrWLJsn/sqlite-with-gcov",
+      "expert_time_estimate_min": 30.0,
+      "junior_time_estimate_min": 120.0,
+      "total_files": 2,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "axUgVSxE9sjGUEHETA9Ddx/pytorch-model-recovery",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/axUgVSxE9sjGUEHETA9Ddx/pytorch-model-recovery",
+      "expert_time_estimate_min": 15.0,
+      "junior_time_estimate_min": 70.0,
+      "total_files": 2,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "bDZ3NNHZSFq2MH6CzCTykb/extract-moves-from-video",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/bDZ3NNHZSFq2MH6CzCTykb/extract-moves-from-video",
+      "expert_time_estimate_min": 120.0,
+      "junior_time_estimate_min": 480.0,
+      "total_files": 0,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "c3FnWBpp4RmfpMvyGn8Wpv/configure-git-webserver",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/c3FnWBpp4RmfpMvyGn8Wpv/configure-git-webserver",
+      "expert_time_estimate_min": 15.0,
+      "junior_time_estimate_min": 60.0,
+      "total_files": 0,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "cEZY7Ut37eqdNnYKPebgYq/pytorch-model-cli",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/cEZY7Ut37eqdNnYKPebgYq/pytorch-model-cli",
+      "expert_time_estimate_min": 30.0,
+      "junior_time_estimate_min": 120.0,
+      "total_files": 7,
+      "code_files": 5,
+      "code_lines_total": 12901,
+      "code_lines_nonblank": 11158,
+      "languages": {
+        "C": {
+          "files": 3,
+          "lines": 5643,
+          "nonblank": 4764
+        },
+        "C++": {
+          "files": 1,
+          "lines": 7231,
+          "nonblank": 6373
+        },
+        "Python": {
+          "files": 1,
+          "lines": 27,
+          "nonblank": 21
+        }
+      },
+      "primary_language": "C++"
+    },
+    {
+      "task_key": "cMPqfgxjNH2qnnDVdWSFb8/multi-source-data-merger",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/cMPqfgxjNH2qnnDVdWSFb8/multi-source-data-merger",
+      "expert_time_estimate_min": 30.0,
+      "junior_time_estimate_min": 120.0,
+      "total_files": 3,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "ca36CXF7yAdWnRdpyfoihT/overfull-hbox",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/ca36CXF7yAdWnRdpyfoihT/overfull-hbox",
+      "expert_time_estimate_min": 60.0,
+      "junior_time_estimate_min": 60.0,
+      "total_files": 0,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "dWGsQxJELwQFMvHVDc5zuS/winning-avg-corewars",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/dWGsQxJELwQFMvHVDc5zuS/winning-avg-corewars",
+      "expert_time_estimate_min": 60.0,
+      "junior_time_estimate_min": 240.0,
+      "total_files": 5,
+      "code_files": 5,
+      "code_lines_total": 205,
+      "code_lines_nonblank": 179,
+      "languages": {
+        "Red": {
+          "files": 5,
+          "lines": 205,
+          "nonblank": 179
+        }
+      },
+      "primary_language": "Red"
+    },
+    {
+      "task_key": "dXxv47w6VWWtstSMMiefPe/fix-ocaml-gc",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/dXxv47w6VWWtstSMMiefPe/fix-ocaml-gc",
+      "expert_time_estimate_min": 1440.0,
+      "junior_time_estimate_min": 14400.0,
+      "total_files": 0,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "djEEswskd9fpNSUidkwrfM/prove-plus-comm",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/djEEswskd9fpNSUidkwrfM/prove-plus-comm",
+      "expert_time_estimate_min": 5.0,
+      "junior_time_estimate_min": 120.0,
+      "total_files": 1,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "dqWUpJXGGPsFGfnuwx6Car/circuit-fibsqrt",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/dqWUpJXGGPsFGfnuwx6Car/circuit-fibsqrt",
+      "expert_time_estimate_min": 960.0,
+      "junior_time_estimate_min": 2400.0,
+      "total_files": 1,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "eUViXxKXCzTue7ywZW59ct/nginx-request-logging",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/eUViXxKXCzTue7ywZW59ct/nginx-request-logging",
+      "expert_time_estimate_min": 20.0,
+      "junior_time_estimate_min": 120.0,
+      "total_files": 0,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "fDMeF8ncVH8hFRrdHUkDzM/reshard-c4-data",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/fDMeF8ncVH8hFRrdHUkDzM/reshard-c4-data",
+      "expert_time_estimate_min": 30.0,
+      "junior_time_estimate_min": 60.0,
+      "total_files": 2,
+      "code_files": 2,
+      "code_lines_total": 84,
+      "code_lines_nonblank": 63,
+      "languages": {
+        "Python": {
+          "files": 2,
+          "lines": 84,
+          "nonblank": 63
+        }
+      },
+      "primary_language": "Python"
+    },
+    {
+      "task_key": "fqGNZJec57abmbsxYbQAz5/log-summary-date-ranges",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/fqGNZJec57abmbsxYbQAz5/log-summary-date-ranges",
+      "expert_time_estimate_min": 75.0,
+      "junior_time_estimate_min": 150.0,
+      "total_files": 1,
+      "code_files": 1,
+      "code_lines_total": 104,
+      "code_lines_nonblank": 95,
+      "languages": {
+        "Python": {
+          "files": 1,
+          "lines": 104,
+          "nonblank": 95
+        }
+      },
+      "primary_language": "Python"
+    },
+    {
+      "task_key": "gHS2mTGhPaYTuJWpCkw4J9/qemu-startup",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/gHS2mTGhPaYTuJWpCkw4J9/qemu-startup",
+      "expert_time_estimate_min": 30.0,
+      "junior_time_estimate_min": 480.0,
+      "total_files": 0,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "gaFWu2WFUf2THiMG8Ezdxo/adaptive-rejection-sampler",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/gaFWu2WFUf2THiMG8Ezdxo/adaptive-rejection-sampler",
+      "expert_time_estimate_min": 180.0,
+      "junior_time_estimate_min": 480.0,
+      "total_files": 1,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "hf6AShq4ZZHdwGTt8JGpEG/polyglot-rust-c",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/hf6AShq4ZZHdwGTt8JGpEG/polyglot-rust-c",
+      "expert_time_estimate_min": 180.0,
+      "junior_time_estimate_min": 720.0,
+      "total_files": 0,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "jAoUooKp48ZpCL53Ra9yUk/mcmc-sampling-stan",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/jAoUooKp48ZpCL53Ra9yUk/mcmc-sampling-stan",
+      "expert_time_estimate_min": 180.0,
+      "junior_time_estimate_min": 2880.0,
+      "total_files": 1,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "jWu5FXBKfqdBD9LqMa9a2N/tune-mjcf",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/jWu5FXBKfqdBD9LqMa9a2N/tune-mjcf",
+      "expert_time_estimate_min": 30.0,
+      "junior_time_estimate_min": 120.0,
+      "total_files": 2,
+      "code_files": 1,
+      "code_lines_total": 88,
+      "code_lines_nonblank": 68,
+      "languages": {
+        "Python": {
+          "files": 1,
+          "lines": 88,
+          "nonblank": 68
+        }
+      },
+      "primary_language": "Python"
+    },
+    {
+      "task_key": "kLfrAkLDVW7LCezLUHt4oB/git-multibranch",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/kLfrAkLDVW7LCezLUHt4oB/git-multibranch",
+      "expert_time_estimate_min": 180.0,
+      "junior_time_estimate_min": 360.0,
+      "total_files": 1,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "kWbDWup9MzjJLPn6gz9P6H/raman-fitting",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/kWbDWup9MzjJLPn6gz9P6H/raman-fitting",
+      "expert_time_estimate_min": 5.0,
+      "junior_time_estimate_min": 30.0,
+      "total_files": 1,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "kzqjKVWxvHZxV5xyLNLqJi/fix-git",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/kzqjKVWxvHZxV5xyLNLqJi/fix-git",
+      "expert_time_estimate_min": 5.0,
+      "junior_time_estimate_min": 20.0,
+      "total_files": 3,
+      "code_files": 1,
+      "code_lines_total": 12,
+      "code_lines_nonblank": 12,
+      "languages": {
+        "Shell": {
+          "files": 1,
+          "lines": 12,
+          "nonblank": 12
+        }
+      },
+      "primary_language": "Shell"
+    },
+    {
+      "task_key": "mJUNThPAPTj7sAa9DCoPrh/protein-assembly",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/mJUNThPAPTj7sAa9DCoPrh/protein-assembly",
+      "expert_time_estimate_min": 60.0,
+      "junior_time_estimate_min": 300.0,
+      "total_files": 4,
+      "code_files": 1,
+      "code_lines_total": 64,
+      "code_lines_nonblank": 54,
+      "languages": {
+        "Python": {
+          "files": 1,
+          "lines": 64,
+          "nonblank": 54
+        }
+      },
+      "primary_language": "Python"
+    },
+    {
+      "task_key": "mQoDwFSymGYHYWpETANa3y/polyglot-c-py",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/mQoDwFSymGYHYWpETANa3y/polyglot-c-py",
+      "expert_time_estimate_min": 20.0,
+      "junior_time_estimate_min": 480.0,
+      "total_files": 0,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "mig33pqGgsU4uNZ5dgPebg/git-leak-recovery",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/mig33pqGgsU4uNZ5dgPebg/git-leak-recovery",
+      "expert_time_estimate_min": 30.0,
+      "junior_time_estimate_min": 60.0,
+      "total_files": 1,
+      "code_files": 1,
+      "code_lines_total": 22,
+      "code_lines_nonblank": 17,
+      "languages": {
+        "Shell": {
+          "files": 1,
+          "lines": 22,
+          "nonblank": 17
+        }
+      },
+      "primary_language": "Shell"
+    },
+    {
+      "task_key": "n9EXHRQn8C4KGZQgXQEvZU/sam-cell-seg",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/n9EXHRQn8C4KGZQgXQEvZU/sam-cell-seg",
+      "expert_time_estimate_min": 600.0,
+      "junior_time_estimate_min": 1200.0,
+      "total_files": 2,
+      "code_files": 0,
+      "code_lines_total": 0,
+      "code_lines_nonblank": 0,
+      "languages": {},
+      "primary_language": null
+    },
+    {
+      "task_key": "n9YQuCoRJFAyCD3Zs6amRV/modernize-scientific-stack",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/n9YQuCoRJFAyCD3Zs6amRV/modernize-scientific-stack",
+      "expert_time_estimate_min": 120.0,
+      "junior_time_estimate_min": 240.0,
+      "total_files": 5,
+      "code_files": 1,
+      "code_lines_total": 92,
+      "code_lines_nonblank": 73,
+      "languages": {
+        "Python": {
+          "files": 1,
+          "lines": 92,
+          "nonblank": 73
+        }
+      },
+      "primary_language": "Python"
+    },
+    {
+      "task_key": "oJLBu7weukw33iq9PEf26P/mailman",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_official_v2/oJLBu7weukw33iq9PEf26P/mailman",
+      "expert_time_estimate_min": 60.0,
+      "junior_time_estimate_min": 180.0,
+      "total_files": 1,
+      "code_files": 1,
+      "code_lines_total": 205,
+      "code_lines_nonblank": 167,
+      "languages": {
+        "Python": {
+          "files": 1,
+          "lines": 205,
+          "nonblank": 167
+        }
+      },
+      "primary_language": "Python"
+    }
+  ]
+}

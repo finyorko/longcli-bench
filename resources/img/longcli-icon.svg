@@ -1,0 +1,28 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">LongCLI-Bench Icon</title>
+  <desc id="desc">A stylized terminal window with a command prompt and progress bars.</desc>
+  <defs>
+    <linearGradient id="bg" x1="20" y1="20" x2="236" y2="236" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B132B"/>
+      <stop offset="1" stop-color="#1C2541"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="50" y1="48" x2="206" y2="208" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#19C37D"/>
+      <stop offset="1" stop-color="#34D399"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="12" y="12" width="232" height="232" rx="40" fill="url(#bg)"/>
+  <rect x="36" y="44" width="184" height="168" rx="18" fill="#0E172A" stroke="#263451" stroke-width="4"/>
+  <circle cx="58" cy="62" r="5" fill="#EF4444"/>
+  <circle cx="76" cy="62" r="5" fill="#F59E0B"/>
+  <circle cx="94" cy="62" r="5" fill="#10B981"/>
+
+  <path d="M66 95L92 116L66 137" stroke="url(#accent)" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="104" y="132" width="42" height="8" rx="4" fill="url(#accent)"/>
+
+  <rect x="64" y="162" width="128" height="10" rx="5" fill="#334155"/>
+  <rect x="64" y="162" width="92" height="10" rx="5" fill="url(#accent)"/>
+  <rect x="64" y="180" width="128" height="10" rx="5" fill="#334155"/>
+  <rect x="64" y="180" width="70" height="10" rx="5" fill="url(#accent)"/>
+</svg>

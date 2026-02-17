@@ -1,0 +1,6 @@
+FROM tb/c-env:v0 
+
+WORKDIR /app
+COPY ap1400_2_hw ./ap1400_2_hw/
+
+COPY INSTRUCTION.md ./INSTRUCTION.md

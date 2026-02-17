@@ -1,0 +1,1161 @@
+{
+  "tasks_root": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli",
+  "allowlist": [
+    "61810_cow",
+    "61810_fs",
+    "61810_lock",
+    "61810_mmap",
+    "61810_net",
+    "61810_pgtbl",
+    "61810_syscall",
+    "61810_thread",
+    "61810_traps",
+    "cs61_fa24_cats",
+    "cs61_fa24_hog",
+    "cs61_fa24_hw08",
+    "cs61_fa24_scheme",
+    "3_task_use",
+    "mg_task"
+  ],
+  "ignorelist": [
+    "61810_util",
+    "mg_task"
+  ],
+  "task_selection": {
+    "use_allowlist": false,
+    "use_ignore_list": true,
+    "selected_tasks": [
+      "3_task_use",
+      "61810_cow",
+      "61810_fs",
+      "61810_lock",
+      "61810_mmap",
+      "61810_net",
+      "61810_pgtbl",
+      "61810_syscall",
+      "61810_thread",
+      "61810_traps",
+      "ap1400_2_hw1",
+      "cs61_fa24_cats",
+      "cs61_fa24_hog",
+      "cs61_fa24_hw08",
+      "cs61_fa24_scheme"
+    ]
+  },
+  "summary": {
+    "counts": {
+      "allowlist_tasks": 15,
+      "ignorelist_tasks": 2,
+      "selected_tasks": 15,
+      "analyzed_tasks": 15,
+      "tasks_with_project_scan": 15,
+      "tasks_with_missing_targets": 5,
+      "missing_targets_total": 10
+    },
+    "metrics": {
+      "avg_project_files": 92.73333333333333,
+      "avg_code_files": 84.6,
+      "avg_code_loc": 12846.4,
+      "avg_target_code_loc": 814.0,
+      "avg_files_to_change": 4.933333333333334,
+      "avg_expert_time_min": 94.13333333333334,
+      "median_expert_time_min": 6.0,
+      "avg_junior_time_min": 176.8,
+      "median_junior_time_min": 6.0
+    },
+    "distributions": {
+      "category": {
+        "software-engineering": {
+          "count": 13,
+          "tasks": [
+            "61810_fs",
+            "61810_lock",
+            "61810_mmap",
+            "61810_net",
+            "61810_pgtbl",
+            "61810_syscall",
+            "61810_thread",
+            "61810_traps",
+            "ap1400_2_hw1",
+            "cs61_fa24_cats",
+            "cs61_fa24_hog",
+            "cs61_fa24_hw08",
+            "cs61_fa24_scheme"
+          ]
+        },
+        "feature_add": {
+          "count": 1,
+          "tasks": [
+            "61810_cow"
+          ]
+        },
+        "from_scratch": {
+          "count": 1,
+          "tasks": [
+            "3_task_use"
+          ]
+        }
+      },
+      "difficulty": {
+        "easy": {
+          "count": 14,
+          "tasks": [
+            "61810_cow",
+            "61810_fs",
+            "61810_lock",
+            "61810_mmap",
+            "61810_net",
+            "61810_pgtbl",
+            "61810_syscall",
+            "61810_thread",
+            "61810_traps",
+            "ap1400_2_hw1",
+            "cs61_fa24_cats",
+            "cs61_fa24_hog",
+            "cs61_fa24_hw08",
+            "cs61_fa24_scheme"
+          ]
+        },
+        "hard": {
+          "count": 1,
+          "tasks": [
+            "3_task_use"
+          ]
+        }
+      },
+      "tags": {
+        "system": {
+          "count": 14,
+          "tasks": [
+            "61810_cow",
+            "61810_fs",
+            "61810_lock",
+            "61810_mmap",
+            "61810_net",
+            "61810_pgtbl",
+            "61810_syscall",
+            "61810_thread",
+            "61810_traps",
+            "ap1400_2_hw1",
+            "cs61_fa24_cats",
+            "cs61_fa24_hog",
+            "cs61_fa24_hw08",
+            "cs61_fa24_scheme"
+          ]
+        },
+        "cpp": {
+          "count": 1,
+          "tasks": [
+            "3_task_use"
+          ]
+        },
+        "openmp": {
+          "count": 1,
+          "tasks": [
+            "3_task_use"
+          ]
+        },
+        "parallel_computing": {
+          "count": 1,
+          "tasks": [
+            "3_task_use"
+          ]
+        },
+        "sparse_matrix": {
+          "count": 1,
+          "tasks": [
+            "3_task_use"
+          ]
+        }
+      }
+    },
+    "languages": {
+      "project_total_loc": {
+        "C++": 192,
+        "Assembly": 3305,
+        "C": 106881,
+        "Makefile": 9,
+        "Perl": 346,
+        "Python": 17345,
+        "JavaScript": 63803,
+        "Scheme": 815
+      },
+      "project_tasks_with_language": {
+        "C++": 2,
+        "Assembly": 9,
+        "C": 10,
+        "Makefile": 9,
+        "Perl": 9,
+        "Python": 5,
+        "JavaScript": 4,
+        "Scheme": 2
+      },
+      "target_total_loc": {
+        "C": 10758,
+        "Perl": 152,
+        "Assembly": 11,
+        "Python": 1210,
+        "Scheme": 79
+      },
+      "target_tasks_with_language": {
+        "C": 9,
+        "Perl": 4,
+        "Assembly": 1,
+        "Python": 3,
+        "Scheme": 2
+      },
+      "target_declared_tasks_with_language": {
+        "C": 9,
+        "Perl": 4,
+        "Makefile": 4,
+        "Assembly": 1,
+        "Python": 3,
+        "Scheme": 2
+      },
+      "target_declared_files": {
+        "C": 52,
+        "Perl": 4,
+        "Makefile": 4,
+        "Assembly": 1,
+        "Python": 5,
+        "Scheme": 2
+      }
+    },
+    "warnings": {
+      "expected_categories": [
+        "bug_fix",
+        "feature_add",
+        "from_scratch",
+        "refactor"
+      ],
+      "tasks_with_unexpected_category": [
+        "61810_fs",
+        "61810_lock",
+        "61810_mmap",
+        "61810_net",
+        "61810_pgtbl",
+        "61810_syscall",
+        "61810_thread",
+        "61810_traps",
+        "ap1400_2_hw1",
+        "cs61_fa24_cats",
+        "cs61_fa24_hog",
+        "cs61_fa24_hw08",
+        "cs61_fa24_scheme"
+      ],
+      "tasks_with_missing_targets": [
+        "61810_fs",
+        "61810_lock",
+        "61810_mmap",
+        "61810_syscall",
+        "61810_traps"
+      ]
+    }
+  },
+  "tasks": [
+    {
+      "task_id": "3_task_use",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/3_task_use",
+      "project_root": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/3_task_use/task_dir",
+      "difficulty": "hard",
+      "category": "from_scratch",
+      "tags": [
+        "cpp",
+        "sparse_matrix",
+        "parallel_computing",
+        "openmp"
+      ],
+      "expert_time_estimate_min": 60.0,
+      "junior_time_estimate_min": 180.0,
+      "task_total_files": 25,
+      "project_total_files": 4,
+      "project_code_files": 1,
+      "project_code_lines": 168,
+      "project_code_lines_nonblank": 150,
+      "primary_language": "C++",
+      "languages": {
+        "C++": {
+          "files": 1,
+          "lines": 168,
+          "nonblank": 150
+        }
+      },
+      "target_code_files": 0,
+      "target_code_lines": 0,
+      "target_code_lines_nonblank": 0,
+      "target_languages": {},
+      "target_languages_declared": {},
+      "target_missing_files": [],
+      "files_to_change": []
+    },
+    {
+      "task_id": "61810_cow",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/61810_cow",
+      "project_root": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/61810_cow/cow",
+      "difficulty": "easy",
+      "category": "feature_add",
+      "tags": [
+        "system"
+      ],
+      "expert_time_estimate_min": 480.0,
+      "junior_time_estimate_min": 1200.0,
+      "task_total_files": 91,
+      "project_total_files": 75,
+      "project_code_files": 69,
+      "project_code_lines": 11951,
+      "project_code_lines_nonblank": 10468,
+      "primary_language": "C",
+      "languages": {
+        "Assembly": {
+          "files": 5,
+          "lines": 366,
+          "nonblank": 324
+        },
+        "C": {
+          "files": 62,
+          "lines": 11546,
+          "nonblank": 10110
+        },
+        "Makefile": {
+          "files": 1,
+          "lines": 1,
+          "nonblank": 1
+        },
+        "Perl": {
+          "files": 1,
+          "lines": 38,
+          "nonblank": 33
+        }
+      },
+      "target_code_files": 4,
+      "target_code_lines": 1117,
+      "target_code_lines_nonblank": 946,
+      "target_languages": {
+        "C": {
+          "files": 4,
+          "lines": 1117,
+          "nonblank": 946
+        }
+      },
+      "target_languages_declared": {
+        "C": 4
+      },
+      "target_missing_files": [],
+      "files_to_change": [
+        "kernel/vm.c",
+        "kernel/trap.c",
+        "kernel/kalloc.c",
+        "kernel/riscv.h"
+      ]
+    },
+    {
+      "task_id": "61810_fs",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/61810_fs",
+      "project_root": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/61810_fs/fs",
+      "difficulty": "easy",
+      "category": "software-engineering",
+      "tags": [
+        "system"
+      ],
+      "expert_time_estimate_min": 800.0,
+      "junior_time_estimate_min": 1200.0,
+      "task_total_files": 90,
+      "project_total_files": 74,
+      "project_code_files": 70,
+      "project_code_lines": 12014,
+      "project_code_lines_nonblank": 10528,
+      "primary_language": "C",
+      "languages": {
+        "Assembly": {
+          "files": 5,
+          "lines": 366,
+          "nonblank": 324
+        },
+        "C": {
+          "files": 63,
+          "lines": 11609,
+          "nonblank": 10170
+        },
+        "Makefile": {
+          "files": 1,
+          "lines": 1,
+          "nonblank": 1
+        },
+        "Perl": {
+          "files": 1,
+          "lines": 38,
+          "nonblank": 33
+        }
+      },
+      "target_code_files": 9,
+      "target_code_lines": 1419,
+      "target_code_lines_nonblank": 1236,
+      "target_languages": {
+        "C": {
+          "files": 8,
+          "lines": 1381,
+          "nonblank": 1203
+        },
+        "Perl": {
+          "files": 1,
+          "lines": 38,
+          "nonblank": 33
+        }
+      },
+      "target_languages_declared": {
+        "C": 8,
+        "Perl": 1,
+        "Makefile": 1
+      },
+      "target_missing_files": [
+        "Makefile",
+        "time.txt"
+      ],
+      "files_to_change": [
+        "kernel/fs.c",
+        "kernel/fs.h",
+        "kernel/file.h",
+        "kernel/stat.h",
+        "kernel/fcntl.h",
+        "kernel/sysfile.c",
+        "kernel/syscall.h",
+        "user/user.h",
+        "user/usys.pl",
+        "Makefile",
+        "time.txt"
+      ]
+    },
+    {
+      "task_id": "61810_lock",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/61810_lock",
+      "project_root": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/61810_lock/lock",
+      "difficulty": "easy",
+      "category": "software-engineering",
+      "tags": [
+        "system"
+      ],
+      "expert_time_estimate_min": 6.0,
+      "junior_time_estimate_min": 6.0,
+      "task_total_files": 95,
+      "project_total_files": 79,
+      "project_code_files": 75,
+      "project_code_lines": 13010,
+      "project_code_lines_nonblank": 11411,
+      "primary_language": "C",
+      "languages": {
+        "Assembly": {
+          "files": 5,
+          "lines": 366,
+          "nonblank": 324
+        },
+        "C": {
+          "files": 68,
+          "lines": 12605,
+          "nonblank": 11053
+        },
+        "Makefile": {
+          "files": 1,
+          "lines": 1,
+          "nonblank": 1
+        },
+        "Perl": {
+          "files": 1,
+          "lines": 38,
+          "nonblank": 33
+        }
+      },
+      "target_code_files": 2,
+      "target_code_lines": 235,
+      "target_code_lines_nonblank": 198,
+      "target_languages": {
+        "C": {
+          "files": 2,
+          "lines": 235,
+          "nonblank": 198
+        }
+      },
+      "target_languages_declared": {
+        "C": 2
+      },
+      "target_missing_files": [
+        "time.txt"
+      ],
+      "files_to_change": [
+        "kernel/kalloc.c",
+        "kernel/bio.c",
+        "time.txt"
+      ]
+    },
+    {
+      "task_id": "61810_mmap",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/61810_mmap",
+      "project_root": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/61810_mmap/mmap",
+      "difficulty": "easy",
+      "category": "software-engineering",
+      "tags": [
+        "system"
+      ],
+      "expert_time_estimate_min": 6.0,
+      "junior_time_estimate_min": 6.0,
+      "task_total_files": 89,
+      "project_total_files": 73,
+      "project_code_files": 69,
+      "project_code_lines": 12140,
+      "project_code_lines_nonblank": 10633,
+      "primary_language": "C",
+      "languages": {
+        "Assembly": {
+          "files": 5,
+          "lines": 366,
+          "nonblank": 324
+        },
+        "C": {
+          "files": 62,
+          "lines": 11735,
+          "nonblank": 10275
+        },
+        "Makefile": {
+          "files": 1,
+          "lines": 1,
+          "nonblank": 1
+        },
+        "Perl": {
+          "files": 1,
+          "lines": 38,
+          "nonblank": 33
+        }
+      },
+      "target_code_files": 9,
+      "target_code_lines": 2235,
+      "target_code_lines_nonblank": 1930,
+      "target_languages": {
+        "C": {
+          "files": 8,
+          "lines": 2197,
+          "nonblank": 1897
+        },
+        "Perl": {
+          "files": 1,
+          "lines": 38,
+          "nonblank": 33
+        }
+      },
+      "target_languages_declared": {
+        "C": 8,
+        "Perl": 1,
+        "Makefile": 1
+      },
+      "target_missing_files": [
+        "Makefile",
+        "time.txt"
+      ],
+      "files_to_change": [
+        "kernel/proc.h",
+        "kernel/proc.c",
+        "kernel/trap.c",
+        "kernel/vm.c",
+        "kernel/sysfile.c",
+        "kernel/syscall.h",
+        "kernel/syscall.c",
+        "user/user.h",
+        "user/usys.pl",
+        "Makefile",
+        "time.txt"
+      ]
+    },
+    {
+      "task_id": "61810_net",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/61810_net",
+      "project_root": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/61810_net/net",
+      "difficulty": "easy",
+      "category": "software-engineering",
+      "tags": [
+        "system"
+      ],
+      "expert_time_estimate_min": 6.0,
+      "junior_time_estimate_min": 6.0,
+      "task_total_files": 98,
+      "project_total_files": 82,
+      "project_code_files": 78,
+      "project_code_lines": 13481,
+      "project_code_lines_nonblank": 11787,
+      "primary_language": "C",
+      "languages": {
+        "Assembly": {
+          "files": 5,
+          "lines": 366,
+          "nonblank": 324
+        },
+        "C": {
+          "files": 69,
+          "lines": 13049,
+          "nonblank": 11406
+        },
+        "Makefile": {
+          "files": 1,
+          "lines": 1,
+          "nonblank": 1
+        },
+        "Perl": {
+          "files": 1,
+          "lines": 40,
+          "nonblank": 35
+        },
+        "Python": {
+          "files": 2,
+          "lines": 25,
+          "nonblank": 21
+        }
+      },
+      "target_code_files": 1,
+      "target_code_lines": 129,
+      "target_code_lines_nonblank": 110,
+      "target_languages": {
+        "C": {
+          "files": 1,
+          "lines": 129,
+          "nonblank": 110
+        }
+      },
+      "target_languages_declared": {
+        "C": 1
+      },
+      "target_missing_files": [],
+      "files_to_change": [
+        "kernel/e1000.c"
+      ]
+    },
+    {
+      "task_id": "61810_pgtbl",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/61810_pgtbl",
+      "project_root": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/61810_pgtbl/pgtbl",
+      "difficulty": "easy",
+      "category": "software-engineering",
+      "tags": [
+        "system"
+      ],
+      "expert_time_estimate_min": 6.0,
+      "junior_time_estimate_min": 6.0,
+      "task_total_files": 94,
+      "project_total_files": 76,
+      "project_code_files": 69,
+      "project_code_lines": 11899,
+      "project_code_lines_nonblank": 10430,
+      "primary_language": "C",
+      "languages": {
+        "Assembly": {
+          "files": 5,
+          "lines": 366,
+          "nonblank": 324
+        },
+        "C": {
+          "files": 62,
+          "lines": 11492,
+          "nonblank": 10070
+        },
+        "Makefile": {
+          "files": 1,
+          "lines": 1,
+          "nonblank": 1
+        },
+        "Perl": {
+          "files": 1,
+          "lines": 40,
+          "nonblank": 35
+        }
+      },
+      "target_code_files": 8,
+      "target_code_lines": 2120,
+      "target_code_lines_nonblank": 1820,
+      "target_languages": {
+        "C": {
+          "files": 8,
+          "lines": 2120,
+          "nonblank": 1820
+        }
+      },
+      "target_languages_declared": {
+        "C": 8
+      },
+      "target_missing_files": [],
+      "files_to_change": [
+        "kernel/memlayout.h",
+        "kernel/proc.c",
+        "kernel/vm.c",
+        "kernel/kalloc.c",
+        "kernel/riscv.h",
+        "kernel/defs.h",
+        "kernel/sysproc.c",
+        "kernel/exec.c"
+      ]
+    },
+    {
+      "task_id": "61810_syscall",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/61810_syscall",
+      "project_root": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/61810_syscall/syscall",
+      "difficulty": "easy",
+      "category": "software-engineering",
+      "tags": [
+        "system"
+      ],
+      "expert_time_estimate_min": 6.0,
+      "junior_time_estimate_min": 6.0,
+      "task_total_files": 97,
+      "project_total_files": 80,
+      "project_code_files": 71,
+      "project_code_lines": 11938,
+      "project_code_lines_nonblank": 10462,
+      "primary_language": "C",
+      "languages": {
+        "Assembly": {
+          "files": 5,
+          "lines": 366,
+          "nonblank": 324
+        },
+        "C": {
+          "files": 64,
+          "lines": 11533,
+          "nonblank": 10104
+        },
+        "Makefile": {
+          "files": 1,
+          "lines": 1,
+          "nonblank": 1
+        },
+        "Perl": {
+          "files": 1,
+          "lines": 38,
+          "nonblank": 33
+        }
+      },
+      "target_code_files": 9,
+      "target_code_lines": 1222,
+      "target_code_lines_nonblank": 1066,
+      "target_languages": {
+        "C": {
+          "files": 8,
+          "lines": 1184,
+          "nonblank": 1033
+        },
+        "Perl": {
+          "files": 1,
+          "lines": 38,
+          "nonblank": 33
+        }
+      },
+      "target_languages_declared": {
+        "C": 8,
+        "Perl": 1,
+        "Makefile": 1
+      },
+      "target_missing_files": [
+        "Makefile",
+        "answers-syscall.txt",
+        "time.txt"
+      ],
+      "files_to_change": [
+        "user/user.h",
+        "user/usys.pl",
+        "kernel/syscall.h",
+        "kernel/syscall.c",
+        "kernel/sysproc.c",
+        "kernel/proc.h",
+        "kernel/proc.c",
+        "kernel/sysinfo.h",
+        "kernel/kalloc.c",
+        "Makefile",
+        "answers-syscall.txt",
+        "time.txt"
+      ]
+    },
+    {
+      "task_id": "61810_thread",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/61810_thread",
+      "project_root": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/61810_thread/thread",
+      "difficulty": "easy",
+      "category": "software-engineering",
+      "tags": [
+        "system"
+      ],
+      "expert_time_estimate_min": 6.0,
+      "junior_time_estimate_min": 6.0,
+      "task_total_files": 92,
+      "project_total_files": 76,
+      "project_code_files": 72,
+      "project_code_lines": 12154,
+      "project_code_lines_nonblank": 10643,
+      "primary_language": "C",
+      "languages": {
+        "Assembly": {
+          "files": 6,
+          "lines": 377,
+          "nonblank": 333
+        },
+        "C": {
+          "files": 64,
+          "lines": 11738,
+          "nonblank": 10276
+        },
+        "Makefile": {
+          "files": 1,
+          "lines": 1,
+          "nonblank": 1
+        },
+        "Perl": {
+          "files": 1,
+          "lines": 38,
+          "nonblank": 33
+        }
+      },
+      "target_code_files": 4,
+      "target_code_lines": 400,
+      "target_code_lines_nonblank": 339,
+      "target_languages": {
+        "Assembly": {
+          "files": 1,
+          "lines": 11,
+          "nonblank": 9
+        },
+        "C": {
+          "files": 3,
+          "lines": 389,
+          "nonblank": 330
+        }
+      },
+      "target_languages_declared": {
+        "C": 3,
+        "Assembly": 1
+      },
+      "target_missing_files": [],
+      "files_to_change": [
+        "user/uthread.c",
+        "user/uthread_switch.S",
+        "notxv6/ph.c",
+        "notxv6/barrier.c"
+      ]
+    },
+    {
+      "task_id": "61810_traps",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/61810_traps",
+      "project_root": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/61810_traps/traps",
+      "difficulty": "easy",
+      "category": "software-engineering",
+      "tags": [
+        "system"
+      ],
+      "expert_time_estimate_min": 6.0,
+      "junior_time_estimate_min": 6.0,
+      "task_total_files": 95,
+      "project_total_files": 78,
+      "project_code_files": 71,
+      "project_code_lines": 11974,
+      "project_code_lines_nonblank": 10503,
+      "primary_language": "C",
+      "languages": {
+        "Assembly": {
+          "files": 5,
+          "lines": 366,
+          "nonblank": 324
+        },
+        "C": {
+          "files": 64,
+          "lines": 11569,
+          "nonblank": 10145
+        },
+        "Makefile": {
+          "files": 1,
+          "lines": 1,
+          "nonblank": 1
+        },
+        "Perl": {
+          "files": 1,
+          "lines": 38,
+          "nonblank": 33
+        }
+      },
+      "target_code_files": 11,
+      "target_code_lines": 2044,
+      "target_code_lines_nonblank": 1764,
+      "target_languages": {
+        "C": {
+          "files": 10,
+          "lines": 2006,
+          "nonblank": 1731
+        },
+        "Perl": {
+          "files": 1,
+          "lines": 38,
+          "nonblank": 33
+        }
+      },
+      "target_languages_declared": {
+        "C": 10,
+        "Perl": 1,
+        "Makefile": 1
+      },
+      "target_missing_files": [
+        "Makefile",
+        "answers-traps.txt"
+      ],
+      "files_to_change": [
+        "kernel/printf.c",
+        "kernel/defs.h",
+        "kernel/riscv.h",
+        "kernel/sysproc.c",
+        "kernel/trap.c",
+        "kernel/proc.h",
+        "kernel/proc.c",
+        "kernel/syscall.h",
+        "kernel/syscall.c",
+        "user/user.h",
+        "user/usys.pl",
+        "Makefile",
+        "answers-traps.txt"
+      ]
+    },
+    {
+      "task_id": "ap1400_2_hw1",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/ap1400_2_hw1",
+      "project_root": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/ap1400_2_hw1/ap1400_2_hw",
+      "difficulty": "easy",
+      "category": "software-engineering",
+      "tags": [
+        "system"
+      ],
+      "expert_time_estimate_min": 6.0,
+      "junior_time_estimate_min": 6.0,
+      "task_total_files": 46,
+      "project_total_files": 10,
+      "project_code_files": 3,
+      "project_code_lines": 29,
+      "project_code_lines_nonblank": 25,
+      "primary_language": "C++",
+      "languages": {
+        "C": {
+          "files": 1,
+          "lines": 5,
+          "nonblank": 3
+        },
+        "C++": {
+          "files": 2,
+          "lines": 24,
+          "nonblank": 22
+        }
+      },
+      "target_code_files": 0,
+      "target_code_lines": 0,
+      "target_code_lines_nonblank": 0,
+      "target_languages": {},
+      "target_languages_declared": {},
+      "target_missing_files": [],
+      "files_to_change": []
+    },
+    {
+      "task_id": "cs61_fa24_cats",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/cs61_fa24_cats",
+      "project_root": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/cs61_fa24_cats/cs61_fa24_cats",
+      "difficulty": "easy",
+      "category": "software-engineering",
+      "tags": [
+        "system"
+      ],
+      "expert_time_estimate_min": 6.0,
+      "junior_time_estimate_min": 6.0,
+      "task_total_files": 65,
+      "project_total_files": 39,
+      "project_code_files": 15,
+      "project_code_lines": 1733,
+      "project_code_lines_nonblank": 1380,
+      "primary_language": "Python",
+      "languages": {
+        "JavaScript": {
+          "files": 4,
+          "lines": 32,
+          "nonblank": 32
+        },
+        "Python": {
+          "files": 11,
+          "lines": 1701,
+          "nonblank": 1348
+        }
+      },
+      "target_code_files": 1,
+      "target_code_lines": 409,
+      "target_code_lines_nonblank": 329,
+      "target_languages": {
+        "Python": {
+          "files": 1,
+          "lines": 409,
+          "nonblank": 329
+        }
+      },
+      "target_languages_declared": {
+        "Python": 1
+      },
+      "target_missing_files": [],
+      "files_to_change": [
+        "cats.py"
+      ]
+    },
+    {
+      "task_id": "cs61_fa24_hog",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/cs61_fa24_hog",
+      "project_root": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/cs61_fa24_hog/cs61-hog",
+      "difficulty": "easy",
+      "category": "software-engineering",
+      "tags": [
+        "system"
+      ],
+      "expert_time_estimate_min": 6.0,
+      "junior_time_estimate_min": 6.0,
+      "task_total_files": 51,
+      "project_total_files": 19,
+      "project_code_files": 13,
+      "project_code_lines": 1335,
+      "project_code_lines_nonblank": 1072,
+      "primary_language": "Python",
+      "languages": {
+        "JavaScript": {
+          "files": 3,
+          "lines": 7,
+          "nonblank": 7
+        },
+        "Python": {
+          "files": 10,
+          "lines": 1328,
+          "nonblank": 1065
+        }
+      },
+      "target_code_files": 1,
+      "target_code_lines": 301,
+      "target_code_lines_nonblank": 232,
+      "target_languages": {
+        "Python": {
+          "files": 1,
+          "lines": 301,
+          "nonblank": 232
+        }
+      },
+      "target_languages_declared": {
+        "Python": 1
+      },
+      "target_missing_files": [],
+      "files_to_change": [
+        "hog.py"
+      ]
+    },
+    {
+      "task_id": "cs61_fa24_hw08",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/cs61_fa24_hw08",
+      "project_root": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/cs61_fa24_hw08/cs61_fa24_hw08",
+      "difficulty": "easy",
+      "category": "software-engineering",
+      "tags": [
+        "system"
+      ],
+      "expert_time_estimate_min": 6.0,
+      "junior_time_estimate_min": 6.0,
+      "task_total_files": 326,
+      "project_total_files": 299,
+      "project_code_files": 289,
+      "project_code_lines": 37775,
+      "project_code_lines_nonblank": 33879,
+      "primary_language": "JavaScript",
+      "languages": {
+        "JavaScript": {
+          "files": 251,
+          "lines": 31882,
+          "nonblank": 29066
+        },
+        "Python": {
+          "files": 36,
+          "lines": 5860,
+          "nonblank": 4787
+        },
+        "Scheme": {
+          "files": 2,
+          "lines": 33,
+          "nonblank": 26
+        }
+      },
+      "target_code_files": 1,
+      "target_code_lines": 7,
+      "target_code_lines_nonblank": 4,
+      "target_languages": {
+        "Scheme": {
+          "files": 1,
+          "lines": 7,
+          "nonblank": 4
+        }
+      },
+      "target_languages_declared": {
+        "Scheme": 1
+      },
+      "target_missing_files": [],
+      "files_to_change": [
+        "hw08.scm"
+      ]
+    },
+    {
+      "task_id": "cs61_fa24_scheme",
+      "task_dir": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/cs61_fa24_scheme",
+      "project_root": "/Users/fun/SII/Research/cli/terminal-bench/tasks_long_cli/cs61_fa24_scheme/cs61_fa24_scheme",
+      "difficulty": "easy",
+      "category": "software-engineering",
+      "tags": [
+        "system"
+      ],
+      "expert_time_estimate_min": 6.0,
+      "junior_time_estimate_min": 6.0,
+      "task_total_files": 398,
+      "project_total_files": 327,
+      "project_code_files": 304,
+      "project_code_lines": 41095,
+      "project_code_lines_nonblank": 36586,
+      "primary_language": "JavaScript",
+      "languages": {
+        "JavaScript": {
+          "files": 251,
+          "lines": 31882,
+          "nonblank": 29066
+        },
+        "Python": {
+          "files": 50,
+          "lines": 8431,
+          "nonblank": 6911
+        },
+        "Scheme": {
+          "files": 3,
+          "lines": 782,
+          "nonblank": 609
+        }
+      },
+      "target_code_files": 4,
+      "target_code_lines": 572,
+      "target_code_lines_nonblank": 475,
+      "target_languages": {
+        "Python": {
+          "files": 3,
+          "lines": 500,
+          "nonblank": 412
+        },
+        "Scheme": {
+          "files": 1,
+          "lines": 72,
+          "nonblank": 63
+        }
+      },
+      "target_languages_declared": {
+        "Python": 3,
+        "Scheme": 1
+      },
+      "target_missing_files": [],
+      "files_to_change": [
+        "scheme_eval_apply.py",
+        "scheme_forms.py",
+        "scheme_classes.py",
+        "questions.scm"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+FROM tb/c-env:v0 
+
+WORKDIR /app
+COPY cmu15_445 ./cmu15_445/
+
+COPY INSTRUCTION.md ./INSTRUCTION.md
