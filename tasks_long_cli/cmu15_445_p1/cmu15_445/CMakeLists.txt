@@ -113,7 +113,11 @@ endif()
 # #####################################################################################################################
 # COMPILER SETUP
 # #####################################################################################################################
-if(NOT DEFINED BUSTUB_SANITIZER)
+# CMU tutorial snippets sometimes show `-DBUSTUB_SANITIZER=` (empty). That is not a valid
+# sanitizer name and produces `c++: error: missing argument to '-fsanitize='`. Empty still
+# counts as DEFINED, so normalize here; set() shadows a bad cache value for the rest of this run.
+# if(NOT DEFINED BUSTUB_SANITIZER)
+if(NOT DEFINED BUSTUB_SANITIZER OR BUSTUB_SANITIZER STREQUAL "")
         set(BUSTUB_SANITIZER address)
 endif()
 
