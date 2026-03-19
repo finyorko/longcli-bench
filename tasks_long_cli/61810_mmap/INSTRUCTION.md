@@ -61,6 +61,8 @@ Here are some hints:
 
 Run usertests -q to make sure everything still works.
 
+Your solution will be evaluated using a separate set of hidden tests. Make sure your implementation is correct, complete, and robust, follows the specification faithfully, and integrates cleanly with the existing codebase rather than relying on narrow task-specific assumptions.
+
 ## Submit the lab
 
 ### Time spent
@@ -70,7 +72,3 @@ Create a new file, time.txt, and put in a single integer, the number of hours y
 ### Answers
 
 If this lab had questions, write up your answers in answers-*.txt.
-
-### Submit
-
-- Please run make grade to ensure that your code passes all of the tests.

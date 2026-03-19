@@ -8,8 +8,7 @@ Before you start coding, here is the related source files:
 - The kernel-space code that routes a system call to the kernel function that implements it is in kernel/syscall.c and kernel/syscall.h.
 - Process-related code is kernel/proc.h and kernel/proc.c.
 
-
-If you run make grade you will see that the grading script cannot exec trace and sysinfotest. Your job is to add the necessary system calls and stubs to make them work.
+At the start of this lab, the `trace` and `sysinfotest` programs will not yet run correctly. Your job is to add the required system calls, user-space stubs, and related kernel support so that both programs execute successfully.
 
 ## Using gdb
 
@@ -154,7 +153,7 @@ Some hints:
     
 - Modify the syscall() function in kernel/syscall.c to print the trace output. You will need to add an array of syscall names to index into.
     
-- If a test case passes when you run it inside qemu directly but you get a timeout when running the tests using make grade, try testing your implementation on Athena. Some of tests in this lab can be a bit too computationally intensive for your local machine (especially if you use WSL).
+- Some of tests in this lab can be a bit too computationally intensive for your local machine (especially if you use WSL), you need to use a  efficient implementation method..
     
 
 ## Sysinfo
@@ -178,6 +177,7 @@ Some hints:
     
 - To collect the number of processes, add a function to kernel/proc.c
     
+Your solution will be evaluated using a separate set of hidden tests. Make sure your implementation is correct, complete, and robust, follows the specification faithfully, and integrates cleanly with the existing codebase rather than relying on narrow task-specific assumptions.
 
 ## Submit the lab
 ### Time spent
@@ -187,6 +187,3 @@ Create a new file, time.txt, and put in a single integer, the number of hours y
 ### Answers
 
 If this lab had questions, write up your answers in answers-syscall.txt
-
-### Submit
-- Please run make grade to ensure that your code passes all of the tests. 

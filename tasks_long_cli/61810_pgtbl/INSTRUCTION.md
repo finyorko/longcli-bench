@@ -25,7 +25,7 @@ Which other xv6 system call(s) could be made faster using this shared page? Expl
 
 To help you visualize RISC-V page tables, and perhaps to aid future debugging, your second task is to write a function that prints the contents of a page table.
 
-Define a function called vmprint(). It should take a pagetable_t argument, and print that pagetable in the format described below. Insert if(p->pid==1) vmprint(p->pagetable) in exec.c just before the return argc, to print the first process's page table. You receive full credit for this part of the lab if you pass the pte printout test of make grade.
+Define a function called vmprint(). It should take a pagetable_t argument, and print that pagetable in the format described below. Insert if(p->pid==1) vmprint(p->pagetable) in exec.c just before the return argc, to print the first process's page table.
 
 Now when you start xv6 it should print output like this, describing the page table of the first process at the point when it has just finished exec()ing init:
 
@@ -58,7 +58,7 @@ Some hints:
 - Define the prototype for vmprint in kernel/defs.h so that you can call it from exec.c.
 - Use %p in your printf calls to print out full 64-bit hex PTEs and addresses as shown in the example.
 
-For every leaf page in the vmprint output, explain what it logically contains and what its permission bits are. Figure 3.4 in the xv6 book might be helpful, although note that the figure might have a slightly different set of pages than the init process that's being inspected here.
+For every leaf page in the vmprint output, explain what it logically contains and what its permission bits are.
 
 ## Detect which pages have been accessed
 
@@ -78,6 +78,4 @@ Some hints:
 - Be sure to clear PTE_A after checking if it is set. Otherwise, it won't be possible to determine if the page was accessed since the last time pgaccess() was called (i.e., the bit will be set forever).
 - vmprint() may come in handy to debug page tables.
 
-## Submit the lab
-
-- Please run `make grade` to ensure that your code passes all of the tests. 
+Your solution will be evaluated using a separate set of hidden tests. Make sure your implementation is correct, complete, and robust, follows the specification faithfully, and integrates cleanly with the existing codebase rather than relying on narrow task-specific assumptions.

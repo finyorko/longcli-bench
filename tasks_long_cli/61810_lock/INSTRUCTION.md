@@ -47,7 +47,7 @@ For this lab, you must use a dedicated unloaded machine with multiple cores. If 
 
 The root cause of lock contention in kalloctest is that kalloc() has a single free list, protected by a single lock. To remove lock contention, you will have to redesign the memory allocator to avoid a single lock and list. The basic idea is to maintain a free list per CPU, each list with its own lock. Allocations and frees on different CPUs can run in parallel, because each CPU will operate on a different list. The main challenge will be to deal with the case in which one CPU's free list is empty, but another CPU's list has free memory; in that case, the one CPU must "steal" part of the other CPU's free list. Stealing may introduce lock contention, but that will hopefully be infrequent.
 
-Your job is to implement per-CPU freelists, and stealing when a CPU's free list is empty. You must give all of your locks names that start with "kmem". That is, you should call initlock for each of your locks, and pass a name that starts with "kmem". Run kalloctest to see if your implementation has reduced lock contention. To check that it can still allocate all of memory, run usertests sbrkmuch. Your output will look similar to that shown below, with much-reduced contention in total on kmem locks, although the specific numbers will differ. Make sure all tests in usertests -q pass. make grade should say that the kalloctests pass.
+Your job is to implement per-CPU freelists, and stealing when a CPU's free list is empty. You must give all of your locks names that start with "kmem". That is, you should call initlock for each of your locks, and pass a name that starts with "kmem". Run kalloctest to see if your implementation has reduced lock contention. To check that it can still allocate all of memory, run usertests sbrkmuch. Your output will look similar to that shown below, with much-reduced contention in total on kmem locks, although the specific numbers will differ.
 
 ```
 $ kalloctest
@@ -187,7 +187,7 @@ test1 OK
 
 You will likely see different output, but the number of test-and-sets for the bcache lock will be high. If you look at the code in kernel/bio.c, you'll see that bcache.lock protects the list of cached block buffers, the reference count (b->refcnt) in each block buffer, and the identities of the cached blocks (b->dev and b->blockno).
 
-Modify the block cache so that the number of acquire loop iterations for all locks in the bcache is close to zero when running bcachetest. Ideally the sum of the counts for all locks involved in the block cache should be zero, but it's OK if the sum is less than 500. Modify bget and brelse so that concurrent lookups and releases for different blocks that are in the bcache are unlikely to conflict on locks (e.g., don't all have to wait for bcache.lock). You must maintain the invariant that at most one copy of each block is cached. You must not increase the number of buffers; there must be exactly NBUF (30) of them. Your modified cache does not need to use LRU replacement, but it must be able to use any of the NBUF struct bufs with zero refcnt when it misses in the cache. When you are done, your output should be similar to that shown below (though not identical). Make sure 'usertests -q' still passes. make grade should pass all tests when you are done.
+Modify the block cache so that the number of acquire loop iterations for all locks in the bcache is close to zero when running bcachetest. Ideally the sum of the counts for all locks involved in the block cache should be zero, but it's OK if the sum is less than 500. Modify bget and brelse so that concurrent lookups and releases for different blocks that are in the bcache are unlikely to conflict on locks (e.g., don't all have to wait for bcache.lock). You must maintain the invariant that at most one copy of each block is cached. You must not increase the number of buffers; there must be exactly NBUF (30) of them. Your modified cache does not need to use LRU replacement, but it must be able to use any of the NBUF struct bufs with zero refcnt when it misses in the cache. When you are done, your output should be similar to that shown below (though not identical). Make sure 'usertests -q' still passes.
 
 ```
 $ bcachetest
@@ -241,7 +241,6 @@ bcachetest's test1 uses more distinct blocks than there are buffers, and exerc
 
 Here are some hints:
 
-- Read the description of the block cache in the xv6 book (Section 8.1-8.3).
 - It is OK to use a fixed number of buckets and not resize the hash table dynamically. Use a prime number of buckets (e.g., 13) to reduce the likelihood of hashing conflicts.
 - Searching in the hash table for a buffer and allocating an entry for that buffer when the buffer is not found must be atomic.
 - Remove the list of all buffers (bcache.head etc.) and don't implement LRU. With this change brelse doesn't need to acquire the bcache lock. In bget you can select any block that has refcnt == 0 instead of the least-recently used one.
@@ -250,6 +249,8 @@ Here are some hints:
 - When replacing a block, you might move a struct buf from one bucket to another bucket, because the new block hashes to a different bucket. You might have a tricky case: the new block might hash to the same bucket as the old block. Make sure you avoid deadlock in that case.
 - Some debugging tips: implement bucket locks but leave the global bcache.lock acquire/release at the beginning/end of bget to serialize the code. Once you are sure it is correct without race conditions, remove the global locks and deal with concurrency issues. You can also run make CPUS=1 qemu to test with one core.
 - Use xv6's race detector to find potential races (see above how to use the race detector).
+
+Your solution will be evaluated using a separate set of hidden tests. Make sure your implementation is correct, complete, and robust, follows the specification faithfully, and integrates cleanly with the existing codebase rather than relying on narrow task-specific assumptions.
 
 ## Submit the lab
 
@@ -261,6 +262,3 @@ Create a new file, time.txt, and put in a single integer, the number of hours y
 
 If this lab had questions, write up your answers in answers-*.txt.
 
-### Submit
-
-- Please run make grade to ensure that your code passes all of the tests.

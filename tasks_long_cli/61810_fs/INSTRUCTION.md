@@ -91,6 +91,8 @@ Hints:
 - Other system calls (e.g., link and unlink) must not follow symbolic links; these system calls operate on the symbolic link itself.
 - You do not have to handle symbolic links to directories for this lab.
 
+Your solution will be evaluated using a separate set of hidden tests. Make sure your implementation is correct, complete, and robust, follows the specification faithfully, and integrates cleanly with the existing codebase rather than relying on narrow task-specific assumptions.
+
 ## Submit the lab
 
 ### Time spent
@@ -100,7 +102,3 @@ Create a new file, time.txt, and put in a single integer, the number of hours y
 ### Answers
 
 If this lab had questions, write up your answers in answers-*.txt.
-
-### Submit
-
-- Please run make grade to ensure that your code passes all of the tests.

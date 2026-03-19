@@ -88,20 +88,7 @@ Run the program from the xv6 shell:
 ```
     
 
-Your solution is correct if your program pauses when run as shown above. Run make grade to see if you indeed pass the sleep tests.
-
-Note that make grade runs all tests, including the ones for the assignments below. If you want to run the grade tests for one assignment, type:
-```
-     $ ./grade-lab-util sleep
-```
-
-This will run the grade tests that match "sleep". Or, you can type:
-
-```
-     $ make GRADEFLAGS=sleep grade
-```
-   
-which does the same.
+Your solution is correct if your program pauses when run as shown above.
 
 ## pingpong
 
@@ -204,7 +191,7 @@ Some hints:
 - Use recursion to allow find to descend into sub-directories.
 - Don't recurse into "." and "..".
 - Changes to the file system persist across runs of qemu; to get a clean file system run `make clean` and then `make qemu`.
-- You'll need to use C strings. Have a look at K&R (the C book), for example Section 5.5.
+- You'll need to use C strings.
 - Note that == does not compare strings like in Python. Use strcmp() instead.
 - Add the program to UPROGS in Makefile.
 
@@ -279,10 +266,7 @@ To test your solution for xargs, run the shell script xargstest.sh. Your solutio
   hello
   $ $
 ```
-  
 
 You may have to go back and fix bugs in your find program. The output has many $ because the xv6 shell doesn't realize it is processing commands from a file instead of from the console, and prints a $ for each command in the file.
 
-## Submit the lab
-
-- Please run make grade to ensure that your code passes all of the tests. 
+Your solution will be evaluated using a separate set of hidden tests. Make sure your implementation is correct, complete, and robust, follows the specification faithfully, and integrates cleanly with the existing codebase rather than relying on narrow task-specific assumptions.

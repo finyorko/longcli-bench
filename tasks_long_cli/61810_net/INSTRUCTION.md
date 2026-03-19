@@ -16,7 +16,7 @@ We've added some files to the xv6 repository for this lab. The file kernel/e100
 
 ## Your Job
 
-Your job is to complete e1000_transmit() and e1000_recv(), both in kernel/e1000.c, so that the driver can transmit and receive packets. You are done when make grade says your solution passes all the tests.
+Your job is to complete e1000_transmit() and e1000_recv(), both in kernel/e1000.c, so that the driver can transmit and receive packets.
 
 The e1000_init() function we provide you in e1000.c configures the E1000 to read packets to be transmitted from RAM, and to write received packets to RAM. This technique is called DMA, for direct memory access, referring to the fact that the E1000 hardware directly writes and reads packets to/from RAM.
 
@@ -68,8 +68,6 @@ DNS arecord for pdos.csail.mit.edu. is 128.52.129.126
 DNS OK
 all tests passed.
 
-You should ensure that make grade agrees that your solution passes.
-
 ## Hints
 
 Start by adding print statements to e1000_transmit() and e1000_recv(), and running make server and (in xv6) nettests. You should see from your print statements that nettests generates a call to e1000_transmit.
@@ -95,6 +93,8 @@ Some hints for implementing e1000_recv:
 
 You'll need locks to cope with the possibility that xv6 might use the E1000 from more than one process, or might be using the E1000 in a kernel thread when an interrupt arrives.
 
+Your solution will be evaluated using a separate set of hidden tests. Make sure your implementation is correct, complete, and robust, follows the specification faithfully, and integrates cleanly with the existing codebase rather than relying on narrow task-specific assumptions.
+
 ## Submit the lab
 
 ### Time spent
@@ -104,7 +104,3 @@ Create a new file, time.txt, and put in a single integer, the number of hours y
 ### Answers
 
 If this lab had questions, write up your answers in answers-*.txt..
-
-### Submit
-
-- Please run make grade to ensure that your code passes all of the tests. 

@@ -6,7 +6,7 @@ This lab will familiarize you with multithreading. You will implement switching 
 
 In this exercise you will design the context switch mechanism for a user-level threading system, and then implement it. To get you started, your xv6 has two files user/uthread.c and user/uthread_switch.S, and a rule in the Makefile to build a uthread program. uthread.c contains most of a user-level threading package, and code for three simple test threads. The threading package is missing some of the code to create a thread and to switch between threads.
 
-Your job is to come up with a plan to create threads and save/restore registers to switch between threads, and implement that plan. When you're done, make grade should say that your solution passes the uthread test.
+Your job is to come up with a plan to create threads and save/restore registers to switch between threads, and implement that plan.
 
 Once you've finished, you should see the following output when you run uthread on xv6 (the three threads might start in a different order):
 
@@ -112,13 +112,11 @@ pthread_mutex_init(&lock, NULL); // initialize the lock
 pthread_mutex_lock(&lock);       // acquire lock
 pthread_mutex_unlock(&lock);     // release lock
 
-You're done when make grade says that your code passes the ph_safe test, which requires zero missing keys with two threads. It's OK at this point to fail the ph_fast test.
-
 Don't forget to call pthread_mutex_init(). Test your code first with 1 thread, then test it with 2 threads. Is it correct (i.e. have you eliminated missing keys?)? Does the two-threaded version achieve parallel speedup (i.e. more total work per unit time) relative to the single-threaded version?
 
 There are situations where concurrent put()s have no overlap in the memory they read or write in the hash table, and thus don't need a lock to protect against each other. Can you change ph.c to take advantage of such situations to obtain parallel speedup for some put()s? Hint: how about a lock per hash bucket?
 
-Modify your code so that some put operations run in parallel while maintaining correctness. You're done when make grade says your code passes both the ph_safe and ph_fast tests. The ph_fast test requires that two threads yield at least 1.25 times as many puts/second as one thread.
+Modify your code so that some put operations run in parallel while maintaining correctness. The ph_fast test requires that two threads yield at least 1.25 times as many puts/second as one thread.
 
 ## Barrier
 
@@ -174,8 +172,6 @@ pthread_cond_wait(&cond, &mutex);  // go to sleep on cond, releasing lock mutex,
 pthread_cond_broadcast(&cond);     // wake up every thread sleeping on cond
 ```
 
-Make sure your solution passes make grade's barrier test.
-
 pthread_cond_wait releases the mutex when called, and re-acquires the mutex before returning.
 
 We have given you barrier_init(). Your job is to implement barrier() so that the panic doesn't occur. We've defined struct barrier for you; its fields are for your use.
@@ -187,6 +183,4 @@ There are two issues that complicate your task:
 
 Test your code with one, two, and more than two threads.
 
-## Submit the lab
-
-- Please run make grade to ensure that your code passes all of the tests. 
+Your solution will be evaluated using a separate set of hidden tests. Make sure your implementation is correct, complete, and robust, follows the specification faithfully, and integrates cleanly with the existing codebase rather than relying on narrow task-specific assumptions.

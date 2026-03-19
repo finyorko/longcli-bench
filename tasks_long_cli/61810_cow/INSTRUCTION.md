@@ -58,6 +58,4 @@ Some hints:
 - Some helpful macros and definitions for page table flags are at the end of kernel/riscv.h.
 - If a COW page fault occurs and there's no free memory, the process should be killed.
 
-## Submit the lab
-
-- Please run make grade to ensure that your code passes all of the tests.
+Your solution will be evaluated using a separate set of hidden tests. Make sure your implementation is correct, complete, and robust, follows the specification faithfully, and integrates cleanly with the existing codebase rather than relying on narrow task-specific assumptions.

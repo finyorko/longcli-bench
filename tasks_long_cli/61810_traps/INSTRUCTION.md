@@ -443,6 +443,4 @@ Some hints:
 
 Once you pass test0, test1, test2, and test3 run usertests -q to make sure you didn't break any other parts of the kernel.
 
-## Submit the lab
-
-- Please run `make grade` to ensure that your code passes all of the tests.
+Your solution will be evaluated using a separate set of hidden tests. Make sure your implementation is correct, complete, and robust, follows the specification faithfully, and integrates cleanly with the existing codebase rather than relying on narrow task-specific assumptions.
