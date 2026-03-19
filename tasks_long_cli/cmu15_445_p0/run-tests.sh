@@ -8,6 +8,7 @@ uv pip install pytest==8.4.1
 if [ ! -d /app/test_output ]; then
     mkdir /app/test_output
 fi
+rm -rf /app/cmu15_445/test
 cp -r /tests/test /app/cmu15_445/test
 cd cmu15_445/
 mkdir -p build && cd build
