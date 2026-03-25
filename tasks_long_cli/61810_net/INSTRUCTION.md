@@ -32,6 +32,7 @@ To test your driver, run make server in one window, and in another window run�
 
 After you've completed the lab, the E1000 driver will send the packet, qemu will deliver it to your host computer, make server will see it, it will send a response packet, and the E1000 driver and then nettests will see the response packet. Before the host sends the reply, however, it sends an "ARP" request packet to xv6 to find out its 48-bit Ethernet address, and expects xv6 to respond with an ARP reply. kernel/net.c will take care of this once you have finished your work on the E1000 driver. If all goes well, nettests will print testing ping: OK, and make server will print a message from xv6!.
 
+```
 tcpdump -XXnr packets.pcap should produce output that starts like this:
 
 reading from file packets.pcap, link-type EN10MB (Ethernet)
@@ -53,11 +54,13 @@ reading from file packets.pcap, link-type EN10MB (Ethernet)
         0x0010:  002d 0000 0000 4011 62b0 0a00 0202 0a00  .-....@.b.......
         0x0020:  020f 6403 07d0 0019 3406 7468 6973 2069  ..d.....4.this.i
         0x0030:  7320 7468 6520 686f 7374 21              s.the.host!
+```
 
 Your output will look somewhat different, but it should contain the strings "ARP, Request", "ARP, Reply", "UDP", "a.message.from.xv6" and "this.is.the.host".
 
 nettests performs some other tests, culminating in a DNS request sent over the (real) Internet to one of Google's name servers. You should ensure that your code passes all these tests, after which you should see this output:
 
+```
 $ nettests
 nettests running on port 25603
 testing ping: OK
@@ -67,6 +70,7 @@ testing DNS
 DNS arecord for pdos.csail.mit.edu. is 128.52.129.126
 DNS OK
 all tests passed.
+```
 
 ## Hints
 
@@ -93,8 +97,6 @@ Some hints for implementing e1000_recv:
 
 You'll need locks to cope with the possibility that xv6 might use the E1000 from more than one process, or might be using the E1000 in a kernel thread when an interrupt arrives.
 
-Your solution will be evaluated using a separate set of hidden tests. Make sure your implementation is correct, complete, and robust, follows the specification faithfully, and integrates cleanly with the existing codebase rather than relying on narrow task-specific assumptions.
-
 ## Submit the lab
 
 ### Time spent
@@ -103,4 +105,8 @@ Create a new file, time.txt, and put in a single integer, the number of hours y
 
 ### Answers
 
-If this lab had questions, write up your answers in answers-*.txt..
+If this lab had questions, write up your answers in answers-*.txt.
+
+### Score
+
+Your solution will be evaluated using a separate set of hidden tests. Make sure your implementation is correct, complete, and robust, follows the specification faithfully, and integrates cleanly with the existing codebase rather than relying on narrow task-specific assumptions. Do not modify the contents related to grade in the Makefile.

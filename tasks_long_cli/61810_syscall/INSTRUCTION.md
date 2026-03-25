@@ -17,6 +17,7 @@ In many cases, print statements will be sufficient to debug your kernel, but som
 
 To help you become familiar with gdb, run make qemu-gdb and then fire up gdb in another window. Once you have two windows open, type in the gdb window:
 
+```
 (gdb) b syscall
 Breakpoint 1 at 0x80002142: file kernel/syscall.c, line 243.
 (gdb) c
@@ -27,6 +28,7 @@ Thread 2 hit Breakpoint 1, syscall () at kernel/syscall.c:243
 243     {
 (gdb) layout src
 (gdb) backtrace
+```
 
 The layout command splits the window in two, showing where gdb is in the source code. The backtrace prints out the stack backtrace.
 
@@ -45,7 +47,7 @@ What is the value of p->trapframe->a7 and what does that value represent? (Hin
 The processor is running in kernel mode, and we can print privileged registers such as sstatus (use RISC-V privileged instructions):
 
 
-(gdb) p /x $sstatus
+`(gdb) p /x $sstatus`
 
 
 ```
@@ -54,6 +56,7 @@ What was the previous mode that the CPU was in?
 
 In the subsequent part of this lab (or in following labs), it may happen that you make a programming error that causes the xv6 kernel to panic. For example, replace the statement num = p->trapframe->a7; with num = * (int *) 0; at the beginning of syscall, run make qemu, and you will see something similar to:
 
+```
 xv6 kernel is booting
 
 hart 2 starting
@@ -61,7 +64,7 @@ hart 1 starting
 scause 0x000000000000000d
 sepc=0x000000008000215a stval=0x0000000000000000
 panic: kerneltrap
-  
+```
 
 Quit out of qemu.
 
@@ -73,6 +76,7 @@ Write down the assembly instruction the kernel is panicing at. Which register co
 
 To inspect the state of the processor and the kernel at the faulting instruction, fire up gdb, and set a breakpoint at the faulting epc, like this:
 
+```
 (gdb) b *0x000000008000215a
 Breakpoint 1 at 0x8000215a: file kernel/syscall.c, line 247.
 (gdb) layout asm
@@ -81,6 +85,7 @@ Continuing.
 [Switching to Thread 1.3]
 
 Thread 3 hit Breakpoint 1, syscall () at kernel/syscall.c:247
+```
 
 Confirm that the faulting assembly instruction is the same as the one you found above.
 
@@ -144,15 +149,10 @@ In the first example above, trace invokes grep tracing just the read system call
 Some hints:
 
 - Add $U/_trace to UPROGS in Makefile
-    
 - Run make qemu and you will see that the compiler cannot compile user/trace.c, because the user-space stubs for the system call don't exist yet: add a prototype for the system call to user/user.h, a stub to user/usys.pl, and a syscall number to kernel/syscall.h. The Makefile invokes the perl script user/usys.pl, which produces user/usys.S, the actual system call stubs, which use the RISC-V ecall instruction to transition to the kernel. Once you fix the compilation issues, run trace 32 grep hello README; it will fail because you haven't implemented the system call in the kernel yet.
-    
 - Add a sys_trace() function in kernel/sysproc.c that implements the new system call by remembering its argument in a new variable in the proc structure (see kernel/proc.h). The functions to retrieve system call arguments from user space are in kernel/syscall.c, and you can see examples of their use in kernel/sysproc.c.
-    
 - Modify fork() (see kernel/proc.c) to copy the trace mask from the parent to the child process.
-    
 - Modify the syscall() function in kernel/syscall.c to print the trace output. You will need to add an array of syscall names to index into.
-    
 - Some of tests in this lab can be a bit too computationally intensive for your local machine (especially if you use WSL), you need to use a  efficient implementation method..
     
 
@@ -163,7 +163,6 @@ In this assignment you will add a system call, sysinfo, that collects informati
 Some hints:
 
 - Add $U/_sysinfotest to UPROGS in Makefile
-    
 - Run make qemu; user/sysinfotest.c will fail to compile. Add the system call sysinfo, following the same steps as in the previous assignment. To declare the prototype for sysinfo() in user/user.h you need predeclare the existence of struct sysinfo:
     
         struct sysinfo;
@@ -172,18 +171,19 @@ Some hints:
     
     Once you fix the compilation issues, run sysinfotest; it will fail because you haven't implemented the system call in the kernel yet.
 - sysinfo needs to copy a struct sysinfo back to user space; see sys_fstat() (kernel/sysfile.c) and filestat() (kernel/file.c) for examples of how to do that using copyout().
-    
 - To collect the amount of free memory, add a function to kernel/kalloc.c
-    
 - To collect the number of processes, add a function to kernel/proc.c
-    
-Your solution will be evaluated using a separate set of hidden tests. Make sure your implementation is correct, complete, and robust, follows the specification faithfully, and integrates cleanly with the existing codebase rather than relying on narrow task-specific assumptions.
 
 ## Submit the lab
+
 ### Time spent
 
 Create a new file, time.txt, and put in a single integer, the number of hours you spent on the lab.
 
 ### Answers
 
-If this lab had questions, write up your answers in answers-syscall.txt
+If this lab had questions, write up your answers in answers-*.txt.
+
+### Score
+
+Your solution will be evaluated using a separate set of hidden tests. Make sure your implementation is correct, complete, and robust, follows the specification faithfully, and integrates cleanly with the existing codebase rather than relying on narrow task-specific assumptions. Do not modify the contents related to grade in the Makefile.

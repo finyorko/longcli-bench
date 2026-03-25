@@ -269,4 +269,16 @@ To test your solution for xargs, run the shell script xargstest.sh. Your solutio
 
 You may have to go back and fix bugs in your find program. The output has many $ because the xv6 shell doesn't realize it is processing commands from a file instead of from the console, and prints a $ for each command in the file.
 
-Your solution will be evaluated using a separate set of hidden tests. Make sure your implementation is correct, complete, and robust, follows the specification faithfully, and integrates cleanly with the existing codebase rather than relying on narrow task-specific assumptions.
+## Submit the lab
+
+### Time spent
+
+Create a new file, time.txt, and put in a single integer, the number of hours you spent on the lab.
+
+### Answers
+
+If this lab had questions, write up your answers in answers-*.txt.
+
+### Score
+
+Your solution will be evaluated using a separate set of hidden tests. Make sure your implementation is correct, complete, and robust, follows the specification faithfully, and integrates cleanly with the existing codebase rather than relying on narrow task-specific assumptions. Do not modify the contents related to grade in the Makefile.

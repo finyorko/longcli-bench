@@ -8,11 +8,13 @@ In this assignment you'll increase the maximum size of an xv6 file. Currently xv
 
 The bigfile command creates the longest file it can, and reports that size:
 
+```
 $ bigfile
 ..
 wrote 268 blocks
 bigfile: file is too small
 $
+```
 
 The test fails because bigfile expects to be able to create a file with 65803 blocks, but unmodified xv6 limits files to 268 blocks.
 
@@ -38,7 +40,7 @@ bmap() deals with two kinds of block numbers. The bn argument is a "logical b
 ### Your Job
 
 Modify bmap() so that it implements a doubly-indirect block, in addition to direct blocks and a singly-indirect block. You'll have to have only 11 direct blocks, rather than 12, to make room for your new doubly-indirect block; you're not allowed to change the size of an on-disk inode. The first 11 elements of ip->addrs[] should be direct blocks; the 12th should be a singly-indirect block (just like the current one); the 13th should be your new doubly-indirect block. You are done with this exercise when bigfile writes 65803 blocks and usertests -q runs successfully:
-
+```
 $ bigfile
 ..................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................
 wrote 65803 blocks
@@ -47,6 +49,7 @@ $ usertests -q
 ...
 ALL TESTS PASSED
 $ 
+```
 
 bigfile will take at least a minute and a half to run.
 
@@ -70,6 +73,7 @@ In this exercise you will add symbolic links to xv6. Symbolic links (or soft lin
 
 You will implement the symlink(char *target, char *path) system call, which creates a new symbolic link at path that refers to file named by target. For further information, see the man page symlink. To test, add symlinktest to the Makefile and run it. Your solution is complete when the tests produce the following output (including usertests succeeding).
 
+```
 $ symlinktest
 Start: test symlinks
 test symlinks: ok
@@ -79,6 +83,7 @@ $ usertests -q
 ...
 ALL TESTS PASSED
 $ 
+```
 
 Hints:
 
@@ -91,8 +96,6 @@ Hints:
 - Other system calls (e.g., link and unlink) must not follow symbolic links; these system calls operate on the symbolic link itself.
 - You do not have to handle symbolic links to directories for this lab.
 
-Your solution will be evaluated using a separate set of hidden tests. Make sure your implementation is correct, complete, and robust, follows the specification faithfully, and integrates cleanly with the existing codebase rather than relying on narrow task-specific assumptions.
-
 ## Submit the lab
 
 ### Time spent
@@ -102,3 +105,7 @@ Create a new file, time.txt, and put in a single integer, the number of hours y
 ### Answers
 
 If this lab had questions, write up your answers in answers-*.txt.
+
+### Score
+
+Your solution will be evaluated using a separate set of hidden tests. Make sure your implementation is correct, complete, and robust, follows the specification faithfully, and integrates cleanly with the existing codebase rather than relying on narrow task-specific assumptions. Do not modify the contents related to grade in the Makefile.

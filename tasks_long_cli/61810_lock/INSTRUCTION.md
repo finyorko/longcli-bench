@@ -250,8 +250,6 @@ Here are some hints:
 - Some debugging tips: implement bucket locks but leave the global bcache.lock acquire/release at the beginning/end of bget to serialize the code. Once you are sure it is correct without race conditions, remove the global locks and deal with concurrency issues. You can also run make CPUS=1 qemu to test with one core.
 - Use xv6's race detector to find potential races (see above how to use the race detector).
 
-Your solution will be evaluated using a separate set of hidden tests. Make sure your implementation is correct, complete, and robust, follows the specification faithfully, and integrates cleanly with the existing codebase rather than relying on narrow task-specific assumptions.
-
 ## Submit the lab
 
 ### Time spent
@@ -262,3 +260,6 @@ Create a new file, time.txt, and put in a single integer, the number of hours y
 
 If this lab had questions, write up your answers in answers-*.txt.
 
+### Score
+
+Your solution will be evaluated using a separate set of hidden tests. Make sure your implementation is correct, complete, and robust, follows the specification faithfully, and integrates cleanly with the existing codebase rather than relying on narrow task-specific assumptions. Do not modify the contents related to grade in the Makefile.

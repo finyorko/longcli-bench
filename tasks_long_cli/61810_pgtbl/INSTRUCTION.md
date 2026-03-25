@@ -78,4 +78,16 @@ Some hints:
 - Be sure to clear PTE_A after checking if it is set. Otherwise, it won't be possible to determine if the page was accessed since the last time pgaccess() was called (i.e., the bit will be set forever).
 - vmprint() may come in handy to debug page tables.
 
-Your solution will be evaluated using a separate set of hidden tests. Make sure your implementation is correct, complete, and robust, follows the specification faithfully, and integrates cleanly with the existing codebase rather than relying on narrow task-specific assumptions.
+## Submit the lab
+
+### Time spent
+
+Create a new file, time.txt, and put in a single integer, the number of hours you spent on the lab.
+
+### Answers
+
+If this lab had questions, write up your answers in answers-*.txt.
+
+### Score
+
+Your solution will be evaluated using a separate set of hidden tests. Make sure your implementation is correct, complete, and robust, follows the specification faithfully, and integrates cleanly with the existing codebase rather than relying on narrow task-specific assumptions. Do not modify the contents related to grade in the Makefile.
