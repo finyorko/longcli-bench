@@ -43,11 +43,10 @@ test = {
         {
           'code': r"""
           scm> (ascending? '())  ; #t or #f
-          545654f52801dba9cbbe0347d265df09
-          # locked
+          #t
           """,
           'hidden': False,
-          'locked': True,
+          'locked': False,
           'multiline': False
         }
       ],

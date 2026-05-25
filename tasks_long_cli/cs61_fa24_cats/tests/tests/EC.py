@@ -5,7 +5,7 @@ test = {
     {
       'cases': [
         {
-          'answer': '4ab45f3b1ed6f2410bd43900b0d4ce6c',
+          'answer': 'A function that takes another function as an input and returns a new function that extends or modifies the behavior of the original function',
           'choices': [
             'A type of design pattern',
             'A function that takes another function as an input and returns a new function that extends or modifies the behavior of the original function',
@@ -13,12 +13,12 @@ test = {
             'A way to loop through an iterable'
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
           'multiline': False,
           'question': 'What is a decorator in Python?'
         },
         {
-          'answer': 'b0d3e0af1a561c121fccba84d0661b3a',
+          'answer': 'To add functionality to existing code',
           'choices': [
             'To add functionality to existing code',
             'To loop through arrays',
@@ -26,12 +26,12 @@ test = {
             'To check for syntax errors in code'
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
           'multiline': False,
           'question': 'Why do we use decorators in Python?'
         },
         {
-          'answer': '034e5b537c8688d20accd6b4855b563a',
+          'answer': 'Using the "@decorator_name" syntax above the function definition',
           'choices': [
             'Using the "#" symbol before the function',
             'By passing the decorator as a parameter to the function',
@@ -39,7 +39,7 @@ test = {
             'By importing the decorator from a library'
           ],
           'hidden': False,
-          'locked': True,
+          'locked': False,
           'multiline': False,
           'question': 'How is a decorator applied to a function?'
         }
@@ -63,13 +63,12 @@ test = {
           ...     print("Hello World")
           
           >>> say_hello()
-          ee08fbbaadc005f518c9734ebaad6d62
-          10e7a47b024506544a6149ffb292a283
-          e1b47d1e24b420693a5874252bbe6018
-          # locked
+          Say Hello
+          Hello World
+          Say Goodbye
           """,
           'hidden': False,
-          'locked': True,
+          'locked': False,
           'multiline': True
         },
         {
@@ -84,11 +83,10 @@ test = {
           ...   return x * 3
           
           >>> print(myfunc(4))
-          f972bfb90199a6a9af3501f0c47d4ef8
-          # locked
+          24
           """,
           'hidden': False,
-          'locked': True,
+          'locked': False,
           'multiline': False
         },
         {

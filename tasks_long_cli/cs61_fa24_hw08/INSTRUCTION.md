@@ -1,11 +1,9 @@
 
 ### Scheme Editor
 
-All Scheme assignments include a web-based editor that makes it easy to run ok tests and visualize environments. Type `python3 editor` in a terminal, and the editor will open in a browser window (at `http://127.0.0.1:31415/`). Whatever changes you make here will also save to the original file on your computer! To stop running the editor and return to the command line, type `Ctrl-C` in the terminal where you started the editor.
+All Scheme assignments include a web-based editor that makes it easy to visualize environments. Type `python3 editor` in a terminal, and the editor will open in a browser window (at `http://127.0.0.1:31415/`). Whatever changes you make here will also save to the original file on your computer! To stop running the editor and return to the command line, type `Ctrl-C` in the terminal where you started the editor.
 
 The `Run` button loads the current assignment's `.scm` file and opens a Scheme interpreter, allowing you to try evaluating different Scheme expressions.
-
-The `Test` button runs all ok tests for the assignment. Click `View Case` for a failed test, then click `Debug` to step through its evaluation.
 
 ### Q1: Ascending
 
@@ -26,12 +24,6 @@ A list of numbers is non-descending if each element after the first is greater t
 )
 ```
 
-Use Ok to unlock and test your code:
-
-```
-python3 ok -q ascending -u --local
-python3 ok -q ascending --local
-```
 
 ### Q2: My Filter
 
@@ -47,12 +39,6 @@ For example, `(my-filter even? '(1 2 3 4 5))` should return `(2 4)` because 
 )
 ```
 
-Use Ok to unlock and test your code:
-
-```
-python3 ok -q filter -u --local
-python3 ok -q filter --local
-```
 
   
 
@@ -73,12 +59,6 @@ For example:
 )
 ```
 
-Use Ok to unlock and test your code:
-
-```
-python3 ok -q interleave -u --local
-python3 ok -q interleave --local
-```
 
   
 
@@ -96,16 +76,4 @@ For example, `(no-repeats (list 5 4 5 4 2 2))` evaluates to `(5 4 2)`.
 )
 ```
 
-Use Ok to test your code:
 
-```
-python3 ok -q no_repeats --local
-```
-
-## Check Your Score Locally
-
-You can locally check your score on each question of this assignment by running
-
-```
-python3 ok --score --local
-```

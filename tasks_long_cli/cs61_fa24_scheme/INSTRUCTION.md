@@ -21,50 +21,14 @@ The rest of the files in the project:
 - `scheme_utils.py`: functions for inspecting Scheme expressions
 - `ucb.py`: utility functions for use in 61A projects
 - `tests.scm`: a collection of test cases written in Scheme
-- `ok`: the autograder
-- `tests`: a directory of tests used by `ok`
-- `mytests.rst`: a file where you can add your own tests
 
 ## Logistics
-
-The project is worth 30 points. 28 points are for correctness, 1 point for submitting Parts 1 by the first checkpoint date. 1 point for submitting Parts 1 & 2 by the second checkpoint date.
-
-You will turn in the following files:
-
-- `scheme_eval_apply.py`
-- `scheme_forms.py`
-- `scheme_classes.py`
-- `questions.scm`
-
-You do not need to modify or turn in any other files to complete the project. To submit the project.
 
 You may not reference solutions found on the internet.
 
 For the functions that we ask you to complete, there may be some initial code that we provide. If you would rather not use that code, feel free to delete it and start from scratch. You may also add new function definitions as you see fit.
 
-**However, please do not modify any other functions or edit any files not listed above**. Doing so may result in your code failing our autograder tests. Also, please do not change any function signatures (names, argument order, or number of arguments).
-
-Throughout this project, you should be testing the correctness of your code. It is good practice to test often, so that it is easy to isolate any problems. However, you should not be testing _too_ often, to allow yourself time to think through problems.
-
-We have provided an **autograder** called `ok` to help you with testing your code and tracking your progress. The first time you run the autograder, you will be asked to **log in with your Ok account using your web browser**. Please do so. Each time you run `ok`, it will back up your work and progress on our servers.
-
-The primary purpose of `ok` is to test your implementations.
-
-If you want to test your code interactively, you can run
-
-```
- python3 ok -q [question number] -i  --local
-```
-
-with the appropriate question number (e.g. `01`) inserted. This will run the tests for that question until the first one you failed, then give you a chance to test the functions you wrote interactively.
-
-You can also use the debugging print feature in OK by writing
-
-```
- print("DEBUG:", x) 
-```
-
-which will produce an output in your terminal without causing OK tests to fail with extra output.
+**However, please do not modify any other functions or edit any files not listed above**. Doing so may break project assumptions or expected interfaces. Also, please do not change any function signatures (names, argument order, or number of arguments).
 
 ## Interpreter details
 
@@ -152,14 +116,8 @@ Now, take a look at the "Environments" and "Procedures" sections of `scheme_cla
 
 > **IMPORTANT NOTE:** Since all non-atomic Scheme expressions (i.e., call expressions, special forms, definitions) are Scheme lists (and therefore linked lists), we use the `Pair` class to represent them. The `Pair` class is similar to the `Link` class we've been working with. For example, the expression `(+ 1 2)` will be represented in our interpreter as `Pair('+', Pair(1, Pair(2, nil)))`. More complicated expressions can be represented with nested `Pair`s. For example, the expression`(+ 1 (* 2 3))` will be represented as `Pair('+', Pair(1, Pair(Pair('*', Pair(2, Pair(3, nil))), nil)))`. **The `Pair` class is defined in `pair.py`.** Please take a look at this class before starting the project! Notice the similarities with the `Link` class.
 
-Use Ok to test your understanding:
 
-```
-python3 ok -q eval_apply -u --local
-```
-
-
-### Problem 1 (1 pt)
+### Problem 1
 
 Implement the `define` and `lookup` methods of the `Frame` class in `scheme_classes.py`.
 
@@ -177,45 +135,6 @@ To complete these methods:
     - If the symbol is not bound in the current frame and the frame has a parent frame, look up the symbol in the parent frame.
     - If the symbol is not found in the current frame and there is no parent frame, raise a `SchemeError`.
 
-Use Ok to unlock and test your code:
-
-```
-python3 ok -q 01 -u --local
-python3 ok -q 01 --local
-```
-
----
-Q1 Unlocking Tests:
-```
->>> global_frame = create_global_frame()
->>> global_frame.define("x", 3)
->>> global_frame.parent is None
-______
->>> global_frame.lookup("x")
-______
->>> global_frame.define("x", 2)
->>> global_frame.lookup("x")
-______
->>> global_frame.lookup("foo")
-Choose the number of the correct choice:
-  0) SchemeError
-  1) 3
-  2) None
-______
-```
-
-```
->>> first_frame = create_global_frame()
->>> first_frame.define("x", 3)
->>> second_frame = Frame(first_frame)
->>> second_frame.parent == first_frame
-______
->>> second_frame.define("y", False)
->>> second_frame.lookup("x")
-______
->>> second_frame.lookup("y")
-______
-```
 
 After you complete this problem, you can start your slightly improved Scheme interpreter (with `python3 scheme.py`). You should now be able to look up built-in procedure names:
 
@@ -231,7 +150,7 @@ However, your Scheme interpreter will still not be able to _call_ these proced
 Remember, at this point, you can only exit the interpreter by pressing `Ctrl-d` on Max/Linux (or `Ctrl-z Enter` on Windows).
 
 ---
-### Problem 2 (2 pt)
+### Problem 2
 
 To be able to call built-in procedures, such as `+`, you need to complete the `BuiltinProcedure` case within the `scheme_apply` function in `scheme_eval_apply.py`. Built-in procedures are applied by calling a corresponding Python function that implements the procedure.
 
@@ -254,39 +173,8 @@ We have already implemented the following behavior for you:
 
 - If calling the function results in a `TypeError` exception being raised, then the wrong number of arguments were passed. The `try` statement handles this exception and raises a `SchemeError` with the message `'incorrect number of arguments'`.
 
-Use Ok to unlock and test your code:
 
-```
-python3 ok -q 02 -u --local
-python3 ok -q 02 --local
-```
-
----
-Q2 Unlocking Tests:
-```
->>> env = create_global_frame()
->>> twos = Pair(2, Pair(2, nil))
->>> plus = BuiltinProcedure(scheme_add) # + procedure
->>> scheme_apply(plus, twos, env) # Type SchemeError if you think this errors
-______
-```
-
-```
->>> env = create_global_frame()
->>> plus = BuiltinProcedure(scheme_add) # + procedure
->>> scheme_apply(plus, nil, env) # Remember what (+) evaluates to in scheme
-______
-```
-
-```
->>> env = create_global_frame()
->>> twos = Pair(2, Pair(2, nil))
->>> oddp = BuiltinProcedure(scheme_oddp) # odd? procedure
->>> scheme_apply(oddp, twos, env) # Type SchemeError if you think this errors
-______
-```
-
-### Problem 3 (2 pt)
+### Problem 3
 
 The `scheme_eval` function (in `scheme_eval_apply.py`) evaluates a Scheme expression in an environment. The provided code already looks up symbols in the current environment, returns self-evaluating expressions (such as numbers), and evaluates special forms.
 
@@ -303,39 +191,10 @@ You'll have to recursively call `scheme_eval` in the first two steps. Here are
 
 > **Important**: do not mutate the passed-in `expr`. That would change a program as it's being evaluated, creating strange and incorrect effects.
 
-Use Ok to unlock and test your code:
-
-```
-python3 ok -q 03 -u --local
-python3 ok -q 03 --local
-```
-
----
-Q3 Unlocking Tests:
-```
->>> expr = read_line('(+ 2 2)')
->>> scheme_eval(expr, create_global_frame()) # Type SchemeError if you think this errors
-______
->>> scheme_eval(Pair('+', Pair(2, Pair(2, nil))), create_global_frame()) # Type SchemeError if you think this errors
-______
->>> expr = read_line('(+ (+ 2 2) (+ 1 3) (* 1 4))')
->>> scheme_eval(expr, create_global_frame()) # Type SchemeError if you think this errors
-______
->>> expr = read_line('(yolo)')
->>> scheme_eval(expr, create_global_frame()) # Type SchemeError if you think this errors
-______
-```
-
-```
-scm> (* (+ 3 2) (+ 1 7)) ; Type SchemeError if you think this errors
-______
-scm> (1 2) ; Type SchemeError if you think this errors
-______
-```
 
 ---
 
-> Some of these tests call a primitive (built-in) procedure called `print-then-return`. This procedure doesn't exist in Scheme, but was added to this project just to test this question. `print-then-return` takes two arguments. It prints out its first argument and returns the second. If you're interested, you can find this function at the bottom of `scheme_builtins.py`
+> Some of the examples below call a primitive (built-in) procedure called `print-then-return`. This procedure doesn't exist in Scheme, but was added to this project for this question. `print-then-return` takes two arguments. It prints out its first argument and returns the second. If you're interested, you can find this function at the bottom of `scheme_builtins.py`
 
 Your interpreter should now be able to evaluate built-in procedure calls, giving you the functionality of the Calculator language and more. Run `python3 scheme.py`, and you can now add and multiply!
 
@@ -348,7 +207,7 @@ scm> (odd? 31)
 #t
 ```
 
-### Problem 4 (2 pt)
+### Problem 4
 
 The `define` special form (spec) in Scheme can be used _either_ to assign the value of a given expression to a symbol or to create a procedure and bind it to a symbol:
 
@@ -368,60 +227,6 @@ The `do_define_form` function in `scheme_forms.py` evaluates `(define ...)`
 
 > _Hint:_ The `define` method of a `Frame` instance creates a binding in that frame.
 
-Use Ok to unlock and test your code:
-
-```
-python3 ok -q 04 -u --local
-python3 ok -q 04 --local
-```
-
----
-Q4 Unlocking Tests:
-```
-What is the structure of the expressions argument to do_define_form?
-
-Choose the number of the correct choice:
-  0) Pair(A, Pair(B, nil)), where:
-        A is the symbol being bound,
-        B is an expression whose value should be evaluated and bound to A
-  1) Pair(A, Pair(B, nil)), where:
-        A is the symbol being bound,
-        B is the value that should be bound to A
-  2) Pair('define', Pair(A, Pair(B, nil))), where:
-        A is the symbol being bound,
-        B is an expression whose value should be evaluated and bound to A
-  3) Pair(A, Pair(B, nil)), where:
-        A is the symbol being bound,
-        B is an expression whose value should be evaluated and bound to A
-  4) Pair(A, B), where:
-        A is the symbol being bound,
-        B is an expression whose value should be evaluated and bound to A
-
-______
-```
-
-```
-What method of a Frame instance will binda value to a symbol in that frame?
-
-Choose the number of the correct choice:
-  0) lookup
-  1) define
-  2) make_child_frame
-  3) bindings
-
-______
-```
-
-```
-scm> (define size 2)
-______
-scm> size
-______
-scm> (define x (+ 7 3))
-______
-scm> x
-______
-```
 
 ---
 
@@ -436,7 +241,7 @@ scm> y
 30
 ```
 
-The following `ok` test determines whether the operator of a call expression is evaluated multiple times. The operator should be evaluated only a _single_ time before raising an error (because `x` is not bound to a procedure).
+The following example determines whether the operator of a call expression is evaluated multiple times. The operator should be evaluated only a _single_ time before raising an error (because `x` is not bound to a procedure).
 
 ```
 (define x 0)
@@ -447,9 +252,9 @@ x
 ; expect 1
 ```
 
-If the operator is evaluated twice, then `x` will be bound to 2 instead of 1 at the end, causing the test to fail. Therefore, if your code fails this test, you'll want to make sure you only evaluate the operator of a call expression once in `scheme_eval`.
+If the operator is evaluated twice, then `x` will be bound to 2 instead of 1 at the end. Therefore, make sure you only evaluate the operator of a call expression once in `scheme_eval`.
 
-### Problem 5 (1 pt)
+### Problem 5
 
 In Scheme, you can quote expressions in two ways: with the `quote` special form (spec) or with the symbol `'`. The reader converts `'...` into `(quote ...)`, so that your interpreter only needs to evaluate the `(quote ...)` syntax. The `quote` special form returns its operand expression without evaluating it:
 
@@ -462,41 +267,6 @@ scm> '(cons 1 2)  ; Equivalent to (quote (cons 1 2))
 
 Implement the `do_quote_form` function in `scheme_forms.py` so that it simply returns the unevaluated operand of the `(quote ...)` expression. **Hint**: Do not overthink this.
 
-Use Ok to unlock and test your code:
-
-```
-python3 ok -q 05 -u --local
-python3 ok -q 05 --local
-```
-
----
-Q5 Unlocking Tests:
-```
-What is the structure of the expressions argument to do_quote_form?
-
-Choose the number of the correct choice:
-  0) A, where:
-        A is the quoted expression
-  1) Pair(A, nil), where:
-        A is the quoted expression
-  2) [A], where:
-        A is the quoted expression
-  3) Pair('quote', Pair(A, nil)), where:
-        A is the quoted expression
-
-______
-```
-
-```
->>> global_frame = create_global_frame()
->>> do_quote_form(Pair(3, nil), global_frame)
-______
->>> do_quote_form(Pair('hi', nil), global_frame)
-______
->>> expr = Pair(Pair('+', Pair('x', Pair(2, nil))), nil)
->>> do_quote_form(expr, global_frame) # Make sure to use Pair notation
-______
-```
 
 ---
 
@@ -529,18 +299,6 @@ scm> tau
 6.28
 ```
 
-**Submit your Phase 1 checkpoint**
-
-Check to make sure that you completed all the problems in Phase 1:
-
-```
-python3 ok --score --local
-```
-
-Then, submit `scheme_eval_apply.py`, `scheme_forms.py`, `scheme_classes.py`, and `questions.scm` to the **Scheme Checkpoint 1** assignment on **Gradescope** before the first checkpoint deadline.
-
-When you run `ok` commands, you'll still see that some tests are locked because you haven't completed the whole project yet. You'll get full credit for the checkpoint if you complete all the problems up to this point.
-
 ## Part 2: Procedures
 
 In Part 2, you will add the ability to create and call user-defined procedures. You will add the following features to the interpreter:
@@ -549,7 +307,7 @@ In Part 2, you will add the ability to create and call user-defined procedures. 
 - Named procedures, using the `(define (...) ...)` special form
 - Dynamically scoped mu procedures, using the `(mu ...)` special form.
 
-### Problem 6 (1 pt)
+### Problem 6
 
 Change the `eval_all` function in `scheme_eval_apply.py` (which is called from `do_begin_form` in `scheme_forms.py`) to complete the implementation of the `begin` special form ([spec](https://insideempire.github.io/CS61A-Website-Archive/articles/scheme-spec/index.html#begin)).
 
@@ -572,24 +330,7 @@ scm> (begin (print 3) '(+ 2 3))
 
 If `eval_all` is passed an empty list of expressions (`nil`), then it should return the Python value `None`, which represents the Scheme value `undefined`.
 
-Use Ok to unlock and test your code:
 
-```
-python3 ok -q 06 -u --local
-python3 ok -q 06 --local
-```
-
-  ---
-Q6 Unlocking Tests:
-
-```
->>> env = create_global_frame()
->>> eval_all(Pair(2, nil), env)
-Choose the number of the correct choice:
-  0) 2
-  1) SchemeError
-______
-```
 
 ```
 >>> eval_all(Pair(4, Pair(5, nil)), env)
@@ -638,28 +379,13 @@ User-defined lambda procedures are represented as instances of the `LambdaProce
 
 For example, in `(lambda (x y) (+ x y))`, `formals` is `Pair('x', Pair('y', nil))`. `body` is `Pair(Pair('+', Pair('x', Pair('y', nil))), nil)`, which is a nested Scheme list where the first element (`body.first`) is the expression `(+ x y)` represented as `Pair('+', Pair('x', Pair('y', nil)))`. `body` is nested to allow for complex expressions and nested function calls.
 
-### Problem 7 (2 pt)
+### Problem 7
 
 Implement the `do_lambda_form` function ([spec](https://insideempire.github.io/CS61A-Website-Archive/articles/scheme-spec/index.html#lambda)) in `scheme_forms.py`, which creates and returns a `LambdaProcedure` instance.
 
 In Scheme, the body of a procedure can contain multiple expressions, but must include at least one. The `body` attribute of a `LambdaProcedure` instance is a nested Scheme list of these expressions, and the `formals` attribute is a properly nested `Pair` expression (see **User-Defined Procedures** for an example). Like a `begin` special form, evaluating the body of a procedure executes all expressions in order, _with the return value being the result of the last expression_.
 
-Use Ok to unlock and test your code:
 
-```
-python3 ok -q 07 -u --local
-python3 ok -q 07 --local
-```
-
-  ---
-Q7 Unlocking Tests:
-
-```
-scm> (lambda (x y) (+ x y)) ;; An lambda procedure is displayed exactly as it is written
-______
-scm> (lambda (x)) ; type SchemeError if you think this causes an error
-______
-```
 
 ```
 >>> env = create_global_frame()
@@ -688,7 +414,7 @@ scm> (lambda (x y) (+ x y))
 (lambda (x y) (+ x y))
 ```
 
-### Problem 8 (2 pt)
+### Problem 8
 
 Implement the `make_child_frame` method of the `Frame` class (in `scheme_classes.py`), which will be used to create new frames when calling user-defined procedures. This method takes in two arguments: `formals`, which is a Scheme list of symbols (ex: `Pair('x', Pair('y', nil))`), and `vals`, which is a Scheme list of values (ex: `Pair(3, Pair(5, nil))`). It should return a new child frame with the formal parameters bound to the values.
 
@@ -701,30 +427,7 @@ To do this:
 
 > _Hint:_ The `define` method of a `Frame` instance creates a binding in that frame.
 
-Use Ok to unlock and test your code:
 
-```
-python3 ok -q 08 -u --local
-python3 ok -q 08 --local
-```
-
----
-Q8 Unlocking Tests:
-
-```
->>> global_frame = create_global_frame()
->>> formals = Pair('a', Pair('b', Pair('c', nil)))
->>> vals = Pair(1, Pair(2, Pair(3, nil)))
->>> frame = global_frame.make_child_frame(formals, vals)
->>> global_frame.lookup('a') # Type SchemeError if you think this errors
-______
->>> frame.lookup('a')        # Type SchemeError if you think this errors
-______
->>> frame.lookup('b')        # Type SchemeError if you think this errors
-______
->>> frame.lookup('c')        # Type SchemeError if you think this errors
-______
-```
 
 ```
 >>> global_frame = create_global_frame()
@@ -734,7 +437,7 @@ ______
 ```
 ---
 
-### Problem 9 (2 pt)
+### Problem 9
 
 Implement the `LambdaProcedure` case in the `scheme_apply` function in `scheme_eval_apply.py`. Notice that this `elif` block is executed when the procedure being applied is a `LambdaProcedure` instance.
 
@@ -748,27 +451,7 @@ Then, within this new frame, evaluate each of the expressions of the body of the
 > 
 > See [User-Defined Procedures](https://insideempire.github.io/CS61A-Website-Archive/proj/scheme.html#user-defined-procedures) to remind yourself of the attributes of `LambdaProcedure`.
 
-Use Ok to unlock and test your code:
 
-```
-python3 ok -q 09 -u --local
-python3 ok -q 09 --local
-```
-
----
-Q9 Unlocking Tests:
-
-```
-scm> (define x 5)
-______
-scm> (define outer (lambda (x)
-....   (lambda () (print x))))
-______
-scm> (define inner (outer 2))
-______
-scm> (inner) ;; which x is accessed? which frame is the parent?
-______
-```
 
 ```
 >>> global_frame = create_global_frame()
@@ -778,7 +461,7 @@ ______
 ```
 ---
 
-### Problem 10 (2 pt)
+### Problem 10
 
 Currently, your Scheme interpreter is able to bind symbols to user-defined procedures in the following manner:
 
@@ -821,30 +504,9 @@ There are (at least) two ways to solve this problem. One is to construct an expr
 > 
 > _Hint for Way 2_: How can we utilize the Scheme list representation of `((f x) (+ x 2))` (the structure for `(define (f x) (* x 2))`) to have the same functionality as `(define f (lambda (x) (+ x 2)))`, which we know our Scheme interpreter (and thus our Python code) can already handle? Try writing out the Scheme list representation yourself and consider what components you would need to extract from it in order to be able to replicate the functionality of `(define f (lambda (x) (+ x 2)))` in Python within `do_define_form`.
 
-Use Ok to unlock and test your code:
 
-```
-python3 ok -q 10 -u --local
-python3 ok -q 10 --local
-```
 
----
-Q10 Unlocking Tests:
-
-```
-scm> (define (f x y) (+ x y))
-______
-scm> f
-Choose the number of the correct choice:
-  0) (lambda (x y) (+ x y))
-  1) (lambda (f x y) (+ x y))
-  2) (define f (lambda (x y) (+ x y)))
-  3) (f (x y) (+ x y))
-______
-```
----
-
-### Problem 11 (1 pt)
+### Problem 11
 
 All of the Scheme procedures we've seen so far use **lexical scoping**: the parent of the new call frame is the environment in which the procedure was _defined_. Another type of scoping, which is not standard in Scheme but appears in other variants of Lisp, is called **dynamic scoping**: the parent of the new call frame is the environment in which the call expression was _evaluated_. With dynamic scoping, calling the same procedure with the same arguments from different parts of your code can create different behavior (due to different parent frames).
 
@@ -866,26 +528,7 @@ Your job:
 - Implement `do_mu_form` in `scheme_forms.py` to evaluate the `mu` special form. A `mu` expression evaluates to a `MuProcedure`. The `MuProcedure` class (defined in `scheme_classes.py`) has been provided for you.
 - In addition to implementing `do_mu_form`, complete the `MuProcedure` case within the `scheme_apply` function (in `scheme_eval_apply.py`) so that when a mu procedure is called, its body is evaluated in the correct environment. When a `MuProcedure` is called, the parent of the new call frame is the environment in which that call expression was **evaluated**. As a result, a `MuProcedure` does not need to store an environment as an instance attribute. Your code here should be VERY similar to what you did for question 9.
 
-Use Ok to unlock and test your code:
 
-```
-python3 ok -q 11 -u --local
-python3 ok -q 11 --local
-```
-
----
-Q11 Unlocking Tests:
-
-```
-scm> (define y 1)
-______
-scm> (define f (mu (x) (+ x y)))
-______
-scm> (define g (lambda (x y) (f (+ x x))))
-______
-scm> (g 3 7)
-______
-```
 
 ---
 
@@ -895,18 +538,6 @@ At this point in the project, your Scheme interpreter should support the followi
 - Defining named procedures using `define` expressions, and
 - Calling user-defined procedures.
 
-### Submit your Phase 1 & 2 checkpoint
-
-Check to make sure that you completed all the problems in Phase 1 and 2:
-
-```
-python3 ok --score --local
-```
-
-Then, submit `scheme_eval_apply.py`, `scheme_forms.py`, `scheme_classes.py`, and `questions.scm` to the **Scheme Checkpoint 2** assignment on **Gradescope** before the checkpoint deadline.
-
-When you run `ok` commands, you'll still see that some tests are locked because you haven't completed the whole project yet. You'll get full credit for the checkpoint if you complete all the problems up to this point.
-
 ## Part 3: Special Forms
 
 This section will be completed in `scheme_forms.py`.
@@ -915,11 +546,11 @@ Logical special forms include `if`, `and`, `or`, and `cond`. These expressio
 
 In Scheme, only `#f` is a false value. All other values (including `0` and `nil`) are true values. You can test whether a value is a true or false value using the provided Python functions `is_scheme_true` and `is_scheme_false`, defined in `scheme_utils.py`.
 
-> Scheme traditionally uses `#f` to indicate the false Boolean value. In our interpreter, that is equivalent to `false` or `False`. Similarly, `true`, `True`, and `#t` are all equivalent. However, **when unlocking tests**, use `#t` and `#f`.
+> Scheme traditionally uses `#f` to indicate the false Boolean value. In our interpreter, that is equivalent to `false` or `False`. Similarly, `true`, `True`, and `#t` are all equivalent. In the examples below, use `#t` and `#f`.
 
 To get you started, we've provided an implementation of the `if` special form in the `do_if_form` function. Make sure you understand that implementation before starting the following questions.
 
-### Problem 12 (2 pt)
+### Problem 12
 
 Implement `do_and_form` and `do_or_form` so that `and` and `or` expressions ([spec](https://insideempire.github.io/CS61A-Website-Archive/articles/scheme-spec/index.html#and)) are evaluated correctly.
 
@@ -953,38 +584,7 @@ scm> (or 4 #t (/ 1 0))  ; short-circuiting behavior of or
 
 **Important:** Use the provided Python functions `is_scheme_true` and `is_scheme_false` from `scheme_utils.py` to test boolean values.
 
-Use Ok to unlock and test your code:
 
-```
-python3 ok -q 12 -u --local
-python3 ok -q 12 --local
-```
-
----
-Q12 Unlocking Tests:
-
-```
-scm> (and)
-Choose the number of the correct choice:
-  0) #t
-  1) #f
-  2) SchemeError
-______
-scm> (and 1 #f)
-Choose the number of the correct choice:
-  0) 1
-  1) #t
-  2) #f
-______
-scm> (and (+ 1 1) 1)
-______
-scm> (and #f 5)
-______
-scm> (and 4 5 (+ 3 3))
-______
-scm> (not (and #t #f 42 (/ 1 0)))
-______
-```
 
 ```
 scm> (or)
@@ -1010,7 +610,7 @@ ______
 ```
 ---
 
-### Problem 13 (2 pt)
+### Problem 13
 
 Fill in the missing parts of `do_cond_form` so that it correctly implements `cond` ([spec](https://insideempire.github.io/CS61A-Website-Archive/articles/scheme-spec/index.html#cond)), returning the value of the first result sub-expression corresponding to a true predicate, or the value of the result sub-expression corresponding to `else`.
 
@@ -1019,7 +619,7 @@ Some special cases:
 - When the true predicate does not have a corresponding result sub-expression, return the predicate value.
 - When a result sub-expression of a `cond` case has multiple expressions, evaluate them all and return the value of the last expression. (_Hint_: Use `eval_all`.)
 
-Your implementation should match the following examples and the additional tests in `tests.scm`.
+Your implementation should match the following examples.
 
 ```
 scm> (cond ((= 4 3) 'nope)
@@ -1043,39 +643,9 @@ scm> (cond (else))
 #t
 ```
 
-Use Ok to unlock and test your code:
 
-```
-python3 ok -q 13 -u --local
-python3 ok -q 13 --local
-```
 
----
-Q2 Unlocking Tests:
-
-```
-scm> (cond ((> 2 3) 5)
-....       ((> 2 4) 6)
-....       ((< 2 5) 7)
-....       (else 8))
-______
-scm> (cond ((> 2 3) 5)
-....       ((> 2 4) 6)
-....       (else 8))
-______
-scm> (cond ((= 1 1))
-....       ((= 4 4) 'huh)
-....       (else 'no))
-______
-scm> (cond ((and #f 2) 'whats)
-....       ((and 1 #t 2))
-....       ((> 2 3) 'going)
-....       (else 'on))
-______
-```
----
-
-### Problem 14 (2 pt)
+### Problem 14
 
 The `let` special form ([spec](https://insideempire.github.io/CS61A-Website-Archive/articles/scheme-spec/index.html#let)) binds symbols to values locally, giving them their initial values. For example:
 
@@ -1101,27 +671,9 @@ You may find the following functions and methods useful:
 
 > **Hint:** When building new linked lists iteratively, it may be easier to build it from right to left (or end to start).
 
-Remember to refer to the [spec](https://insideempire.github.io/CS61A-Website-Archive/articles/scheme-spec/index.html#let) if you don't understand any of the test cases!
+Remember to refer to the [spec](https://insideempire.github.io/CS61A-Website-Archive/articles/scheme-spec/index.html#let) if you don't understand any of the examples.
 
-Use Ok to unlock and test your code:
 
-```
-python3 ok -q 14 -u --local
-python3 ok -q 14 --local
-```
-
----
-Q2 Unlocking Tests:
-
-```
-scm> (define x 1)
-______
-scm> (let ((x 5))
-....    (+ x 3))
-______
-scm> x
-______
-```
 
 ```
 scm> (let ((a 1) (b a)) b)
@@ -1149,18 +701,6 @@ ______
 ```
 ---
 
-### Additional Scheme Tests (1 pt)
-
-Your final task in Part III of this project is to make sure that your scheme interpreter passes the additional suite of tests we have provided.
-
-To run these tests (worth 1 point), run the command:
-
-```
-python3 ok -q tests.scm --local
-```
-
-If you have passed all of the required cases, you should see 1/1 points received for `tests.scm` when you run `python ok --score`. If you are failing tests due to output from `print` statements you've added in your code for debugging, make sure to remove those as well for the tests to pass.
-
 Congratulations! Your Scheme interpreter implementation is now complete!
 
 ## Part 4: Write Some Scheme
@@ -1168,15 +708,14 @@ Congratulations! Your Scheme interpreter implementation is now complete!
 Not only is your Scheme interpreter itself a tree-recursive program, but it is flexible enough to evaluate _other_ recursive programs. Implement the following procedures in the `questions.scm` file.
 
 
-As you use your interpreter, you may discover additional bugs in your interpreter implementation. Therefore, you may find it useful to test your code for these questions in the staff interpreter or the web editor and then try it in your own interpreter once you are confident your Scheme code is working. You can also use the web editor to visualize the scheme code you've written and help you debug.
+As you use your interpreter, you may discover additional bugs in your interpreter implementation. You can use the staff interpreter or the web editor to explore behavior, and you can also use the web editor to visualize the Scheme code you've written and help you debug.
 
 ### Scheme Editor
 
 As you're writing your code, you can debug using the local Scheme Editor. To run this editor, run `python3 editor`. This should open a window in your browser; if it does not, please navigate to localhost:31415 and you should see it.
 
-Make sure to run `python3 ok` in a separate tab or window so that the editor keeps running.
 
-### Problem 15 (1 pt)
+### Problem 15
 
 Implement the `enumerate` procedure, which takes in a list of values and returns a list of two-element lists, where the first element is the index of the value, and the second element is the value itself.
 
@@ -1187,13 +726,8 @@ scm> (enumerate '())
 ()
 ```
 
-Use Ok to test your code:
 
-```
-python3 ok -q 15 --local
-```
-
-### Problem 16 (2 pt)
+### Problem 16
 
 Implement the `merge` procedure, which takes in a comparator function `ordered?` and two lists that are sorted according to the comparator and combines the two lists into a single sorted list. A comparator defines an ordering by comparing two values and returning a true value if and only if the two values are ordered.
 
@@ -1208,8 +742,3 @@ scm> (merge < '(1) '(2 3 5))
 
 In case of a tie, you can choose to break the tie in any way you wish.
 
-Use Ok to test your code:
-
-```
-python3 ok -q 16 --local
-```

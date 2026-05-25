@@ -2,7 +2,7 @@
 
 In this project, you will create a tower defense game called Ants Vs. SomeBees. As the ant queen, you populate your colony with the bravest ants you can muster. Your ants must protect their queen from the evil bees that invade your territory. Irritate the bees enough by throwing leaves at them, and they will be vanquished. Fail to pester the airborne intruders adequately, and your queen will succumb to the bees' wrath. This game is inspired by PopCap Games' Plants Vs. Zombies.
 
-This project uses an object-oriented programming paradigm. The project also involves understanding, extending, and testing a large program.
+This project uses an object-oriented programming paradigm. The project also involves understanding and extending a large program.
 
 ## Starter files
 
@@ -12,41 +12,16 @@ The directory contains several files, but all of your changes will be made to 
 - `ants_plans.py`: The details of each difficulty level
 - `ucb.py`: Utility functions for CS 61A
 - `gui.py:` A graphical user interface (GUI) for Ants Vs. SomeBees.
-- `ok`: The autograder
-- `proj3.ok`: The `ok` configuration file
-- `tests`: A directory of tests used by `ok`
 - `libs`: A directory of libraries used by `gui.py`
 - `static`: A directory of images and files used by `gui.py`
 - `templates`: A directory of HTML templates used by `gui.py`
 
 ## Logistics
-You do not need to modify or turn in any other files to complete the project. To submit the project.
+You do not need to modify or turn in any other files to complete the project.
 
 For the functions that we ask you to complete, there may be some initial code that we provide. If you would rather not use that code, feel free to delete it and start from scratch. You may also add new function definitions as you see fit.
 
-**However, please do not modify any other functions or edit any files not listed above**. Doing so may result in your code failing our autograder tests. Also, please do not change any function signatures (names, argument order, or number of arguments).
-
-Throughout this project, you should be testing the correctness of your code. It is good practice to test often, so that it is easy to isolate any problems. However, you should not be testing _too_ often, to allow yourself time to think through problems.
-
-We have provided an **autograder** called `ok` to help you with testing your code and tracking your progress. The first time you run the autograder, you will be asked to **log in with your Ok account using your web browser**. Please do so. Each time you run `ok`, it will back up your work and progress on our servers.
-
-The primary purpose of `ok` is to test your implementations.
-
-If you want to test your code interactively, you can run
-
-```
- python3 ok -q [question number] -i 
-```
-
-with the appropriate question number (e.g. `01`) inserted. This will run the tests for that question until the first one you failed, then give you a chance to test the functions you wrote interactively.
-
-You can also use the debugging print feature in OK by writing
-
-```
- print("DEBUG:", x) 
-```
-
-which will produce an output in your terminal without causing OK tests to fail with extra output.
+**However, please do not modify any other functions or edit any files not listed above**. Doing so may break project assumptions or expected interfaces. Also, please do not change any function signatures (names, argument order, or number of arguments).
 
 ## The Game
 
@@ -90,20 +65,11 @@ To help visualize how all the classes fit together, here (ants_diagram.pdf) is
 
 In the first phase you will complete the implementation that will allow for basic gameplay with the two basic `Ant`s: the `HarvesterAnt` and the `ThrowerAnt`.
 
-### Problem 0 (0 pt)
+### Problem 0
 
-Answer a set of conceptual questions after you have read the _entire_ `ants.py` file by running this `ok` command:
+Read the _entire_ `ants.py` file before you begin.
 
-```
-python3 ok -q 00 -u
-```
-
-
-If you get stuck while answering these questions, you can try reading through `ants.py` again or asking questions on Ed.
-
-> **A note on unlocking tests**: If you'd like to review the unlocking questions after you have completed the unlocking test, you can navigate to (within the `ants` folder), the `tests` folder. For example, after unlocking Problem 0, you can review the unlocking test at `tests/00.py`.
-
-### Problem 1 (1 pt)
+### Problem 1
 
 **Part A**: Currently, there is no cost for placing any type of `Ant`, and so there is no challenge to the game. The base class `Ant` has a `food_cost` of zero. Override this class attribute for `HarvesterAnt` and `ThrowerAnt` according to the "Food Cost" column in the table below.
 
@@ -115,17 +81,8 @@ If you get stuck while answering these questions, you can try reading through `
 
 **Part B**: Now that placing an `Ant` costs food, we need to be able to gather more food! To fix this issue, implement the `HarvesterAnt` class. A `HarvesterAnt` is a type of `Ant` that adds one food to the `gamestate.food` total as its `action`.
 
-Before writing any code, unlock the tests to verify your understanding of the question:
-```
-python3 ok -q 01 -u
-```
 
-Once you are done unlocking, begin implementing your solution. You can check your correctness with:
-```
-python3 ok -q 01
-```
-
-### Problem 2 (1 pt)
+### Problem 2
 
 In this problem, you'll complete `Place.__init__` by adding code that tracks entrances. Right now, a `Place` keeps track only of its `exit`. We would like a `Place` to keep track of its entrance as well. A `Place` needs to track only one `entrance`. Tracking entrances will be useful when an `Ant` needs to see what `Bee`s are in front of it in the tunnel.
 
@@ -142,19 +99,8 @@ However, simply passing an entrance to a `Place` constructor will be problemat
 
 ![](./attachments/colony-drawing.png)
 
-Before writing any code, unlock the tests to verify your understanding of the question:
 
-```
-python3 ok -q 02 -u
-```
-
-Once you are done unlocking, begin implementing your solution. You can check your correctness with:
-
-```
-python3 ok -q 02
-```
-
-### Problem 3 (2 pt)
+### Problem 3
 
 In order for a `ThrowerAnt` to throw a leaf, it must know which bee to hit. The provided implementation of the `nearest_bee` method in the `ThrowerAnt` class only allows them to hit bees in the same `Place`. Your job is to fix it so that a `ThrowerAnt` will `throw_at` the nearest bee in front of it **that is not still in the `Hive`.** This includes bees that are in the same `Place` as a `ThrowerAnt`
 
@@ -171,17 +117,6 @@ Change `nearest_bee` so that it returns a random `Bee` from the nearest plac
 > _Hint_: As a reminder, if there are no bees present at a `Place`, then the `bees` attribute of that `Place` instance will be an empty list.
 
 
-Before writing any code, unlock the tests to verify your understanding of the question:
-
-```
-python3 ok -q 03 -u
-```
-
-Once you are done unlocking, begin implementing your solution. You can check your correctness with:
-
-```
-python3 ok -q 03
-```
 
 ### Playing the game
 
@@ -206,36 +141,21 @@ optional arguments:
   -h, --help     show this help message and exit
   -d DIFFICULTY  sets difficulty of game (test/easy/normal/hard/extra-hard)
   -w, --water    loads a full layout with water
-  --food FOOD    number of food to start with when testing
+  --food FOOD    number of food to start with
 ```
 
 You can refresh the webpage to restart the game, but if you changed your code, you need to terminate `gui.py` and run it again. To terminate `gui.py`, you can hit `Ctrl + C` on the terminal.
 
 You cannot have multiple tabs of this same Ants GUI open simultaneously or they will all error.
 
-### Checkpoint Submission
-
-Check to make sure that you completed all the problems in Phase 1:
-
-```
-python3 ok --score
-```
-
-Then, submit `ants.py` to the **Ants Checkpoint 1** assignment on **Gradescope** before the checkpoint 1 deadline.
-
-When you run `ok` commands, you'll still see that some tests are locked because you haven't completed the whole project yet. You'll get full credit for the checkpoint if you complete all the problems up to this point.
-
-Congratulations! You have finished Phase 1 of this project!
-
 ## Phase 2: More Ants!
 
 Now that you've implemented basic gameplay with two types of `Ant`s, let's add some flavor to the ways ants can attack bees. In this problem and on, you'll be implementing several different `Ant`s with different attack strategies.
 
-**After you implement each `Ant` subclass in these sections, you'll need to set its `implemented` class attribute to `True`** so that that type of ant will show up in the GUI. Feel free to try out the game with each new ant to test the functionality!
+**After you implement each `Ant` subclass in these sections, you'll need to set its `implemented` class attribute to `True`** so that that type of ant will show up in the GUI.
 
-With all following ants from now on, try `python3 gui.py` to play against a full swarm of bees in a multi-tunnel layout and try `-d hard` or `-d extra-hard` if you want a real challenge! If the bees are too numerous to vanquish, you might need to create some new ants.
 
-### Problem 4 (2 pt)
+### Problem 4
 
 A `ThrowerAnt` is a powerful threat to the bees, but it has a high food cost. In this problem, you'll implement two subclasses of `ThrowerAnt` that are less costly but have constraints on the distance they can throw:
 
@@ -261,25 +181,14 @@ You should **not** need to repeat any code between `ThrowerAnt`, `ShortThrow
 
 > _Hint:_ `lower_bound` and `upper_bound` should mark an inclusive range.
 
-> **Important:** Make sure your class attributes are called `upper_bound` and `lower_bound` The tests directly reference these attribute names, and will error if you use another name for these attributes.
+> **Important:** Make sure your class attributes are called `upper_bound` and `lower_bound` Other parts of the project expect these exact attribute names.
 
 Don't forget to set the `implemented` class attribute of `LongThrower` and `ShortThrower` to `True`.
 
-Before writing any code, unlock the tests to verify your understanding of the question:
-
-```
-python3 ok -q 04 -u
-```
 
 
-After writing code, test your implementation (rerun the tests for 03 to make sure they still work):
 
-```
-python3 ok -q 03
-python3 ok -q 04
-```
-
-### Problem 5 (3 pt)
+### Problem 5
 
 Implement the `FireAnt`, which does damage when it receives damage. Specifically, if it is damaged by `amount` health units, it does a damage of `amount` to all bees in its place (this is called _reflected damage_). If it dies, it does an additional amount of damage, as specified by its `damage` attribute, which has a default value of `3` as defined in the `FireAnt` class.
 
@@ -315,25 +224,9 @@ Once you've finished implementing the `FireAnt`, give it a class attribute `im
 
 > _Note:_ Even though you are overriding the superclass's `reduce_health` function (`Ant.reduce_health`), you can still use this method in your implementation by calling it.
 
-Before writing any code, unlock the tests to verify your understanding of the question:
 
-```
-python3 ok -q 05 -u
-```
 
-Once you are done unlocking, begin implementing your solution. You can check your correctness with:
-
-```
-python3 ok -q 05
-```
-
-You can also test your program by playing a game or two! A `FireAnt` should destroy all co-located `Bee`s when it is stung. To start a game with ten food (for easy testing):
-
-```
-python3 gui.py --food 10
-```
-
-### Problem 6 (1 pt)
+### Problem 6
 
 We are going to add some protection to our glorious home base by implementing the `WallAnt`, an ant that does nothing each turn. A `WallAnt` is useful because it has a large `health` value.
 
@@ -345,19 +238,8 @@ Unlike with previous ants, we have not provided you with a class statement. Impl
 
 > _Hint_: Make sure you implement the `__init__` method too so the `WallAnt` starts off with the appropriate amount of `health`!
 
-Before writing any code, unlock the tests to verify your understanding of the question:
 
-```
-python3 ok -q 06 -u
-```
-
-Once you are done unlocking, begin implementing your solution. You can check your correctness with:
-
-```
-python3 ok -q 06
-```
-
-### Problem 7 (3 pt)
+### Problem 7
 
 Implement the `HungryAnt`, which will select a random `Bee` from its `place` and deal damage to the `Bee` equal to the `Bee`'s health, eating it whole. After eating a `Bee`, a `HungryAnt` must spend 3 turns chewing before being able to eat again. While the `HungryAnt` is chewing, it is not able to eat (deal damage to) any `Bee`s. If there is no bee in its place available to eat, the `HungryAnt` will do nothing.
 
@@ -376,19 +258,8 @@ Implement the `action` method of the `HungryAnt`: First, check if it is chewi
 
 > _Hint_: Other than the `action` method, make sure you implement the `__init__` method too in order to define any instance variables and make sure that `HungryAnt` starts off with the appropriate amount of `health`!
 
-Before writing any code, unlock the tests to verify your understanding of the question:
 
-```
-python3 ok -q 07 -u
-```
-
-Once you are done unlocking, begin implementing your solution. You can check your correctness with:
-
-```
-python3 ok -q 07
-```
-
-### Problem 8 (3 pt)
+### Problem 8
 
 Right now, our ants are quite frail. We'd like to provide a way to help them last longer against the onslaught of the bees. Enter the `BodyguardAnt`.
 
@@ -399,8 +270,7 @@ Right now, our ants are quite frail. We'd like to provide a way to help them las
 
 To more easily implement the `BodyguardAnt`, we will break up this problem into 3 subparts. In each part, we will making changes in either the `ContainerAnt` class, `Ant` class, or `BodyguardAnt` class.
 
-> _Note:_ We have separated out Question 8 into three different subparts. We recommend going through the unlocking test for each subpart before writing any code for it. You will be tested through each subpart and each subpart is worth one point (for a total of three for the whole question).
-
+> _Note:_ We have separated out Question 8 into three different subparts.
 #### Problem 8a
 
 First, we will define and work in a `ContainerAnt` parent class that we will later use for our `BodyguardAnt`.
@@ -418,17 +288,6 @@ There is already an `Ant.can_contain` method, but it always returns `False`.�
 
 > _Hint:_ You may find the `is_container` attribute that each `Ant` has useful for checking if a specific `Ant` is a container.
 
-Before writing any code, unlock the tests to verify your understanding of the question:
-
-```
-python3 ok -q 08a -u
-```
-
-Once you are done unlocking, begin implementing your solution. You can check your correctness with:
-
-```
-python3 ok -q 08a
-```
 
 #### Problem 8b
 
@@ -445,17 +304,6 @@ Modify `Ant.add_to` to allow a container and its contained ant to occupy the s
 
 > **Note:** If you're getting an "unreachable code" warning for `Ant.add_to` via the VSCode Pylance extension, it's fine to ignore this specific warning, as the code is actually run (the warning _in this case_ is inaccurate).
 
-Before writing any code, unlock the tests to verify your understanding of the question:
-
-```
-python3 ok -q 08b -u
-```
-
-Once you are done unlocking, begin implementing your solution. You can check your correctness with:
-
-```
-python3 ok -q 08b
-```
 
 #### Problem 8c
 
@@ -465,19 +313,8 @@ Add a `BodyguardAnt.__init__` that sets the initial amount of health for the B
 
 Once you've finished implementing the `BodyguardAnt`, give it a class attribute `implemented` with the value `True`.
 
-Before writing any code, unlock the tests to verify your understanding of the question:
 
-```
-python3 ok -q 08c -u
-```
-
-Once you are done unlocking, begin implementing your solution. You can check your correctness with:
-
-```
-python3 ok -q 08c
-```
-
-### Problem 9 (2 pt)
+### Problem 9
 
 The `BodyguardAnt` provides great defense, but they say the best defense is a good offense. The `TankAnt` is a `ContainerAnt` that protects an ant in its place and also deals 1 damage to all bees in its place each turn. Like any `ContainerAnt`, a `TankAnt` allows the ant that it contains to perform its action each turn.
 
@@ -499,7 +336,7 @@ You should not need to modify any code outside of the `TankAnt` class. If you 
 
 In the final phase, you're going to add one last kick to the game by introducing a new type of place and new ants that are able to occupy this place. One of these ants is the most important ant of them all: the queen of the colony!
 
-### Problem 10 (1 pt)
+### Problem 10
 
 Let's add water to the colony! Currently there are only two types of places, the `Hive` and a basic `Place`. To make things more interesting, we're going to create a new type of `Place` called `Water`.
 
@@ -507,27 +344,9 @@ Only an insect that is waterproof can be placed in `Water`. In order to determi
 
 Now, implement the `add_insect` method for `Water`. First, add the insect to the place regardless of whether it is waterproof. Then, if the insect is not waterproof, reduce the insect's health to 0. _Do not repeat code from elsewhere in the program._ Instead, use methods that have already been defined.
 
-Before writing any code, unlock the tests to verify your understanding of the question:
-
-```
-python3 ok -q 10 -u
-```
 
 
-Once you are done unlocking, begin implementing your solution. You can check your correctness with:
-
-```
-python3 ok -q 10
-```
-
-Once you've finished this problem, play a game that includes water. To access the `wet_layout`, which includes water, add the `--water` option (or `-w` for short) when you start the game.
-
-```
-python3 gui.py --water
-```
-
-
-### Problem 11 (2 pt)
+### Problem 11
 
 Currently there are no ants that can be placed on `Water`. Implement the `ScubaThrower`, which is a subclass of `ThrowerAnt` that is more costly and waterproof, _but otherwise identical to its base class_. A `ScubaThrower` should not lose its health when placed in `Water`.
 
@@ -538,19 +357,8 @@ Currently there are no ants that can be placed on `Water`. Implement the `Scub
 
 We have not provided you with a class header. Implement the `ScubaThrower` class from scratch. Give it a class attribute `name` with the value `'Scuba'` (so that the graphics work) and remember to set the class attribute `implemented` with the value `True` (so that you can use it in a game).
 
-Before writing any code, unlock the tests to verify your understanding of the question:
 
-```
-python3 ok -q 11 -u
-```
-
-Once you are done unlocking, begin implementing your solution. You can check your correctness with:
-
-```
-python3 ok -q 11
-```
-
-### Problem 12 (2 pt)
+### Problem 12
 
 Finally, implement the `QueenAnt`. A queen is a `ThrowerAnt` that inspires her fellow ants through her bravery. In addition to the standard `ThrowerAnt` action, a `QueenAnt` doubles the damage of all the ants behind her each time she performs an action. However, once an ant's damage has been doubled, it _cannot_ be doubled again. Try to think of a way to keep track of whether an ant's damage has already been doubled (Hint: Use an instance attribute!)
 
@@ -570,28 +378,4 @@ However, with great power comes great responsibility. If a queen ever has its he
 
 > _Hint:_ You can find each `Place` in a tunnel behind a `QueenAnt` by starting at the queen's `place.exit` and then repeatedly moving back to the previous place's `exit`. The `exit` of a `Place` at the end of a tunnel is `None`.
 
-Before writing any code, unlock the tests to verify your understanding of the question:
 
-```
-python3 ok -q 12 -u
-```
-
-Once you are done unlocking, begin implementing your solution. You can check your correctness with:
-
-```
-python3 ok -q 12
-```
-
-## Project submission
-
-Run `ok` on all problems to make sure all tests are unlocked and pass:
-
-```
-python3 ok
-```
-
-You can also check your score on each part of the project:
-
-```
-python3 ok --score
-```
