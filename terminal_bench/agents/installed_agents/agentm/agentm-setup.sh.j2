@@ -1,0 +1,39 @@
+#!/bin/bash
+set -e
+
+# Install uv if not present
+if ! command -v uv &>/dev/null; then
+    curl -LsSf https://astral.sh/uv/install.sh | sh
+    export PATH="$HOME/.local/bin:$PATH"
+fi
+
+# Ensure ~/.local/bin is on PATH for this and future shells
+export PATH="$HOME/.local/bin:$PATH"
+grep -q '.local/bin' ~/.bashrc 2>/dev/null || echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+
+# Install AgentM as a uv tool (avoids externally-managed-environment errors)
+uv tool install "agentm @ git+https://github.com/Lincyaw/AgentM.git"
+
+# Create the local scenario manifest under ~/.agentm/ so agentm can find it
+mkdir -p ~/.agentm/contrib/scenarios/local
+cat > ~/.agentm/contrib/scenarios/local/manifest.yaml << 'MANIFEST'
+name: local
+description: Minimal tool set for terminal-bench tasks.
+extensions:
+  - module: agentm.extensions.builtin.operations
+    config:
+      backend: local
+  - module: agentm.extensions.builtin.tool_result_cap
+  - module: agentm.extensions.builtin.file_tools
+  - module: agentm.extensions.builtin.tool_bash
+  - module: agentm.extensions.builtin.observability
+  - module: agentm.extensions.builtin.system_prompt
+    config:
+      prompt: ""
+  - module: agentm.extensions.builtin.runtime_context
+  - module: agentm.extensions.builtin.llm_compaction
+  - module: agentm.extensions.builtin.read_history
+MANIFEST
+
+# Verify installation
+agentm --help >/dev/null 2>&1 || { echo "AgentM installation failed"; exit 1; }
